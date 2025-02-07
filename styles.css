@@ -377,45 +377,108 @@ section p {
     color: var(--color-texto);
 }
 
-/* Proyectos */
+/* Estilos para la sección de proyectos */
+#proyectos {
+    background-color: #0a192f;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#proyectos h2 {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contenedor-proyectos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
 .proyecto {
-    background-color: var(--color-secundario);
-    padding: 1.5rem;
-    margin: 1.5rem 0;
+    background-color: #112240;
     border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .proyecto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+}
+
+.contenido-proyecto {
+    padding: 1.5rem;
 }
 
 .proyecto h3 {
-    margin-top: 0;
-    color: var(--color-destacado);
+    font-size: 1.5rem;
+    color: #64ffda;
+    margin-bottom: 1rem;
 }
 
 .proyecto p {
     font-size: 1rem;
-    color: var(--color-texto);
+    color: #8892b0;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
-.proyecto a {
+.enlaces-proyecto {
+    display: flex;
+    gap: 1rem;
+}
+
+.boton-demo, .boton-codigo {
     display: inline-block;
-    margin: 0.5rem;
     padding: 0.5rem 1rem;
-    background-color: var(--color-destacado);
-    color: var(--color-fondo);
     border-radius: 4px;
-    transition: background-color 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.proyecto a:hover {
-    background-color: var(--color-hover);
+.boton-demo {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+
+.boton-demo:hover {
+    background-color: #52d1b2;
+}
+
+.boton-codigo {
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    color: #64ffda;
+}
+
+.boton-codigo:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor-proyectos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proyecto {
+        max-width: 100%;
+    }
 }
 
 /* Formulario de contacto */
