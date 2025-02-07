@@ -100,6 +100,10 @@ nav ul li.active::after {
     width: 100%;
 }
 
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Secciones */
 section {
     padding: 6rem 2rem;
@@ -111,12 +115,220 @@ section {
     text-align: center;
 }
 
+/* Estilos para la sección de inicio */
 #inicio {
-    background-color: var(--color-fondo);
+    background-color: #0a192f;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.contenido-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 2rem;
+}
+
+.texto-inicio {
+    max-width: 600px;
+}
+
+.texto-inicio h1 {
+    font-size: 3rem;
+    color: #64ffda;
+    margin-bottom: 1rem;
+    animation: aparecer 1s ease-in-out;
+}
+
+.texto-inicio .nombre-destacado {
+    color: #64ffda;
+    font-weight: bold;
+}
+
+.texto-inicio .subtitulo {
+    font-size: 1.5rem;
+    color: #ccd6f6;
+    margin-bottom: 1.5rem;
+    animation: aparecer 1.5s ease-in-out;
+}
+
+.texto-inicio .descripcion {
+    font-size: 1.1rem;
+    color: #8892b0;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    animation: aparecer 2s ease-in-out;
+}
+
+.boton-llamada {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #64ffda;
+    color: #0a192f;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
+
+.boton-llamada:hover {
+    background-color: #52d1b2;
+}
+
+.imagen-perfil {
+    max-width: 400px;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+.imagen-perfil img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+/* Animaciones */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenido-inicio {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .texto-inicio h1 {
+        font-size: 2.5rem;
+    }
+
+    .texto-inicio .subtitulo {
+        font-size: 1.25rem;
+    }
+
+    .imagen-perfil {
+        margin-top: 2rem;
+        max-width: 300px;
+    }
+}
+
+/* Estilos para la sección sobre mí */
 #sobre-mi {
-    background-color: var(--color-secundario);
+    background-color: #112240;
+    padding: 4rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-sobre-mi {
+    max-width: 1200px;
+    width: 100%;
+}
+
+#sobre-mi h2 {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.descripcion-sobre-mi p {
+    font-size: 1.1rem;
+    color: #8892b0;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    text-align: center;
+}
+
+.experiencia {
+    margin-top: 2rem;
+}
+
+.experiencia h3 {
+    font-size: 2rem;
+    color: #64ffda;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tarjeta-experiencia {
+    background-color: #0a192f;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tarjeta-experiencia h4 {
+    font-size: 1.5rem;
+    color: #64ffda;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-experiencia .empresa {
+    font-size: 1.1rem;
+    color: #ccd6f6;
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-experiencia .fecha {
+    font-size: 0.9rem;
+    color: #8892b0;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-experiencia .descripcion {
+    font-size: 1rem;
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .descripcion-sobre-mi p {
+        font-size: 1rem;
+    }
+
+    .tarjeta-experiencia {
+        padding: 1rem;
+    }
+
+    .tarjeta-experiencia h4 {
+        font-size: 1.25rem;
+    }
+
+    .tarjeta-experiencia .descripcion {
+        font-size: 0.9rem;
+    }
 }
 
 #proyectos {
@@ -221,6 +433,11 @@ form button {
 form button:hover {
     background-color: var(--color-hover);
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
 
 /* Footer */
 footer {
