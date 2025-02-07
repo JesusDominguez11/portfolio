@@ -32,7 +32,8 @@ a:hover {
 }
 
 /* Menú de navegación *
-/* Navbar */
+
+/* Navbar moderno */
 nav {
     background-color: var(--color-fondo);
     padding: 1rem 2rem;
@@ -41,6 +42,15 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animación del navbar al hacer scroll */
+nav {
+    transition: transform 0.3s ease;
+}
+
+nav.hide {
+    transform: translateY(-100%);
 }
 
 nav ul {
@@ -61,6 +71,8 @@ nav ul li a {
     font-weight: 500;
     text-decoration: none;
     transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    display: inline-block;
 }
 
 nav ul li a:hover {
@@ -74,12 +86,17 @@ nav ul li::after {
     width: 0;
     height: 2px;
     background-color: var(--color-destacado);
-    bottom: -5px;
+    bottom: 0;
     left: 0;
     transition: width 0.3s ease;
 }
 
 nav ul li:hover::after {
+    width: 100%;
+}
+
+/* Línea inferior para la sección activa */
+nav ul li.active::after {
     width: 100%;
 }
 
