@@ -32,6 +32,15 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
+// Mover el cursor secundario con un ligero retraso
+const cursorFollower = document.querySelector('.cursor-follower');
+
+document.addEventListener('mousemove', (e) => {
+    setTimeout(() => {
+        cursorFollower.style.left = `${e.clientX}px`;
+        cursorFollower.style.top = `${e.clientY}px`;
+    }, 50);
+});
 
 // Resaltar la sección activa en el navbar
 const sections = document.querySelectorAll('section');
@@ -43,57 +52,17 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        // Verifica si la sección está en la vista
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
             current = section.getAttribute('id');
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
+        // Compara el href del enlace con el ID de la sección activa
+        if (link.getAttribute('href') === `#${current}`) {
             link.classList.add('active');
         }
-    });
-});
-
-// Cambiar el cursor al hacer hover sobre enlaces o botones
-document.querySelectorAll('a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada').forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorFollower.classList.add('hover');
-    });
-    element.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorFollower.classList.remove('hover');
-    });
-});
-
-//Constantes para el manejo del hover
-const cursor = document.querySelector('.cursor');
-const cursorFollower = document.querySelector('.cursor-follower');
-
-// Mover el cursor principal
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-});
-
-// Mover el cursor secundario con un ligero retraso
-document.addEventListener('mousemove', (e) => {
-    setTimeout(() => {
-        cursorFollower.style.left = `${e.clientX}px`;
-        cursorFollower.style.top = `${e.clientY}px`;
-    }, 50);
-});
-
-// Cambiar el cursor al hacer hover sobre enlaces o botones
-document.querySelectorAll('').forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.classList.add('hover');
-        cursorFollower.classList.add('hover');
-    });
-    element.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hover');
-        cursorFollower.classList.remove('hover');
     });
 });

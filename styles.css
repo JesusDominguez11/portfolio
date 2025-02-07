@@ -1,6 +1,6 @@
 /* Estilos generales */
 :root {
-    --color-fondo: #0a192f; /* Azul oscuro */
+    --color-fondo: #020c1b; /* Azul oscuro */
     --color-secundario: #112240; /* Azul un poco más claro */
     --color-texto: #ccd6f6; /* Blanco azulado */
     --color-destacado: #64ffda; /* Verde azulado */
@@ -27,18 +27,17 @@ a {
     text-decoration: none;
 }
 
-/* a:hover {
-    text-decoration: underline;
-} */
-
 /* Asegurar que los elementos interactivos tengan un z-index mayor */
 a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
     position: relative;
     z-index: 10; /* Cualquier valor mayor que 1 (z-index del cursor secundario) */
 }
 
-/* Menú de navegación *
 
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Navbar moderno */
 nav {
     background-color: var(--color-fondo);
@@ -101,10 +100,12 @@ nav ul li:hover::after {
     width: 100%;
 }
 
-/* Línea inferior para la sección activa */
-nav ul li.active::after {
-    width: 100%;
+nav ul li a.active {
+    color: #64ffda; /* Cambia el color del enlace activo */
+    border-bottom: 2px solid #64ffda; /* Subrayado para el enlace activo */
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
 
 
 
@@ -492,7 +493,8 @@ section p {
 
 /* Estilos para la sección de contacto */
 #contacto {
-    background-color: #112240;
+    /* background-color: #112240; */
+    background-color: #0f172a;
     padding: 4rem 2rem;
     min-height: 100vh;
     display: flex;
@@ -601,6 +603,7 @@ textarea {
 
 
 
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Estilos para el footer */
 footer {
     background-color: #020c1b;
@@ -680,40 +683,32 @@ footer a:hover {
         margin-bottom: 1rem;
     }
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* Cursor principal */
-.cursor {
-    width: 0px;
-    height: 0px;
-    background-color: var(--color-destacado);
-    border-radius: 50%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 10000; /* El cursor principal debe estar por encima de todo */
-    transition: width 0.2s ease, height 0.2s ease;
-}
 
-/* Cursor secundario (follower) */
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
 .cursor-follower {
-    width: 600px;
-    height: 600px;
+    width: 800px;
+    height: 800px;
     border: 2px solid var(--color-destacado);
     border-radius: 50%;
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 1; /* El cursor secundario debe estar detrás de los elementos interactivos */
+    z-index: 1;
     transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-    filter: blur(100px);
-    background-color: var(--color-fondo-suave);
+    filter: blur(200px);
+    background: radial-gradient(circle, rgba(100, 255, 218, 0.2), transparent 60%);
 }
 
-/* Efecto al hacer hover */
-.cursor.hover, .cursor-follower.hover {
-    width: 50px;
-    height: 50px;
-    background-color: var(--color-fondo-suave);
-    filter: blur(8px);
+.cursor-follower.hover {
+    width: 60px;
+    height: 60px;
+    filter: blur(200px);
+    background: radial-gradient(circle, rgba(82, 209, 178, 0.3), transparent 100%);
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
