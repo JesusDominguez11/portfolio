@@ -56,6 +56,17 @@ window.addEventListener('scroll', () => {
     });
 });
 
+// Cambiar el cursor al hacer hover sobre enlaces o botones
+document.querySelectorAll('a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.classList.add('hover');
+        cursorFollower.classList.add('hover');
+    });
+    element.addEventListener('mouseleave', () => {
+        cursor.classList.remove('hover');
+        cursorFollower.classList.remove('hover');
+    });
+});
 
 //Constantes para el manejo del hover
 const cursor = document.querySelector('.cursor');

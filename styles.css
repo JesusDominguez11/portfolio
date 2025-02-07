@@ -27,8 +27,14 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
     text-decoration: underline;
+} */
+
+/* Asegurar que los elementos interactivos tengan un z-index mayor */
+a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
+    position: relative;
+    z-index: 10; /* Cualquier valor mayor que 1 (z-index del cursor secundario) */
 }
 
 /* Menú de navegación *
@@ -279,13 +285,30 @@ section {
     text-align: center;
 }
 
+.tarjetas-experiencia {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
 .tarjeta-experiencia {
     background-color: #0a192f;
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-experiencia:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+}
+
+.tarjetas-experiencia:hover .tarjeta-experiencia:not(:hover) {
+    opacity: 0.5;
 }
 
 .tarjeta-experiencia h4 {
@@ -488,7 +511,7 @@ footer {
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 10000;
+    z-index: 10000; /* El cursor principal debe estar por encima de todo */
     transition: width 0.2s ease, height 0.2s ease;
 }
 
@@ -501,7 +524,7 @@ footer {
     position: fixed;
     transform: translate(-50%, -50%);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 1; /* El cursor secundario debe estar detrás de los elementos interactivos */
     transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
     filter: blur(100px);
     background-color: var(--color-fondo-suave);
