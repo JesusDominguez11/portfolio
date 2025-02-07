@@ -1,0 +1,282 @@
+/* Estilos generales */
+:root {
+    --color-fondo: #0a192f; /* Azul oscuro */
+    --color-secundario: #112240; /* Azul un poco más claro */
+    --color-texto: #ccd6f6; /* Blanco azulado */
+    --color-destacado: #64ffda; /* Verde azulado */
+    --color-hover: #52d1b2; /* Verde azulado más oscuro */
+    --color-borde: #233554; /* Borde azul grisáceo */
+    --color-fondo-suave: rgba(100, 255, 218, 0.1); /* Fondo suave para efectos */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+    color: #ccd6f6;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #64ffda;
+}
+
+a {
+    color: #64ffda;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Menú de navegación *
+/* Navbar */
+nav {
+    background-color: var(--color-fondo);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1.5rem;
+    position: relative;
+}
+
+nav ul li a {
+    color: var(--color-texto);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--color-destacado);
+}
+
+/* Línea inferior al hacer hover */
+nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-destacado);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav ul li:hover::after {
+    width: 100%;
+}
+
+/* Secciones */
+section {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#inicio {
+    background-color: var(--color-fondo);
+}
+
+#sobre-mi {
+    background-color: var(--color-secundario);
+}
+
+#proyectos {
+    background-color: var(--color-fondo);
+}
+
+#contacto {
+    background-color: var(--color-secundario);
+}
+
+/* Títulos de sección */
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-destacado);
+}
+
+/* Texto general */
+section p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    line-height: 1.8;
+    color: var(--color-texto);
+}
+
+/* Proyectos */
+.proyecto {
+    background-color: var(--color-secundario);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.proyecto h3 {
+    margin-top: 0;
+    color: var(--color-destacado);
+}
+
+.proyecto p {
+    font-size: 1rem;
+    color: var(--color-texto);
+}
+
+.proyecto a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-destacado);
+    color: var(--color-fondo);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.proyecto a:hover {
+    background-color: var(--color-hover);
+}
+
+/* Formulario de contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 400px;
+}
+
+form input, form textarea {
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--color-texto);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: var(--color-destacado);
+    outline: none;
+}
+
+form button {
+    background-color: var(--color-destacado);
+    color: var(--color-fondo);
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--color-hover);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-top: 1px solid var(--color-borde);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.social-links li a {
+    color: var(--color-texto);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: var(--color-destacado);
+}
+
+
+/* Cursor principal */
+.cursor {
+    width: 0px;
+    height: 0px;
+    background-color: var(--color-destacado);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Cursor secundario (follower) */
+.cursor-follower {
+    width: 600px;
+    height: 600px;
+    border: 2px solid var(--color-destacado);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+    filter: blur(100px);
+    background-color: var(--color-fondo-suave);
+}
+
+/* Efecto al hacer hover */
+.cursor.hover, .cursor-follower.hover {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-fondo-suave);
+    filter: blur(8px);
+}
