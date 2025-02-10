@@ -225,18 +225,20 @@ section.visible .contenido {
 
 .boton-llamada {
     display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #64ffda;
-    color: #0a192f;
-    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #64ffda;
     border-radius: 4px;
+    color: #64ffda;
+    text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s ease;
     animation: aparecer 2.5s ease-in-out;
 }
 
 .boton-llamada:hover {
-    background-color: #52d1b2;
+    background-color: #64ffda;
+    color: #0a192f;
 }
 
 .imagen-perfil {
@@ -509,7 +511,6 @@ section p {
     animation: flotar 3s ease-in-out infinite;
 }
 
-/* Botón único */
 .boton-codigo {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -520,6 +521,7 @@ section p {
     text-decoration: none;
     font-weight: 500;
     transition: background-color 0.3s ease, color 0.3s ease;
+    animation: aparecer 2.5s ease-in-out;
 }
 
 .boton-codigo:hover {
@@ -572,6 +574,7 @@ section p {
     color: #64ffda;
     margin-bottom: 1rem;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 1s ease-in-out;
 }
 
@@ -582,6 +585,7 @@ section p {
     max-width: 600px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 1.5s ease-in-out;
 }
 
@@ -623,7 +627,7 @@ textarea {
     min-height: 150px;
 }
 
-.boton-enviar {
+/* .boton-enviar {
     padding: 0.75rem 1.5rem;
     background-color: #64ffda;
     color: #0a192f;
@@ -640,6 +644,27 @@ textarea {
     background-color: #52d1b2;
     outline: none;
     box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+} */
+
+.boton-enviar {
+    /* display: inline-block; */
+    padding: 0.75rem 1.5rem;
+    width:fit-content;
+    align-self: center;
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    color: #64ffda;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
+
+.boton-enviar:hover {
+    background-color: #64ffda;
+    color: #0a192f;
 }
 
 .mensaje-exito {
