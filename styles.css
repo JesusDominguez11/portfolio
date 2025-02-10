@@ -9,6 +9,10 @@
     --color-fondo-suave: rgba(100, 255, 218, 0.1); /* Fondo suave para efectos */
 }
 
+html {
+    scroll-behavior: smooth; /* Habilita el desplazamiento suave en toda la página */
+}
+
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;

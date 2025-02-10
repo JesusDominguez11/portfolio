@@ -11,6 +11,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
+//ya no es necesario pq se cambio por: se uso html {    scroll-behavior: smooth; /* Habilita el desplazamiento suave en toda la página */}
+// // Desplazamiento suave para el botón "Ver mis proyectos"
+// document.querySelector('.boton-llamada').addEventListener('click', function (e) {
+//     e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+//     const targetId = this.getAttribute('href'); // Obtiene el ID de la sección de proyectos
+//     const targetSection = document.querySelector(targetId); // Selecciona la sección de proyectos
+//     targetSection.scrollIntoView({
+//         behavior: 'smooth', // Desplazamiento suave
+//         block: 'start'      // Alinea la sección en la parte superior de la ventana
+//     });
+// }); 
+
 // Ocultar/mostrar el navbar al hacer scroll
 let lastScroll = 0;
 const navbar = document.querySelector('nav');
