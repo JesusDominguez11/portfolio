@@ -126,7 +126,31 @@ section {
     align-items: center;
     text-align: center;
 
-    transition: background 0.5s ease;
+    transition: background 0.9s ease;
+}
+
+/* Animación para mostrar el contenido */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aplicar animación a los elementos de las secciones */
+section .contenido {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.visible .contenido {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Degradado suave entre secciones */
@@ -279,11 +303,13 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: aparecer 1s ease-in-out;
 }
 
 .contenido-sobre-mi {
     max-width: 1200px;
     width: 100%;
+    animation: aparecer 1.5s ease-in-out;
 }
 
 #sobre-mi h2 {
@@ -291,6 +317,7 @@ section {
     color: #64ffda;
     margin-bottom: 2rem;
     text-align: center;
+    animation: aparecer 1s ease-in-out;
 }
 
 .descripcion-sobre-mi p {
@@ -300,6 +327,7 @@ section {
     max-width: 800px;
     margin: 0 auto 2rem auto;
     text-align: center;
+    animation: aparecer 1.5s ease-in-out;
 }
 
 .experiencia {
@@ -311,6 +339,7 @@ section {
     color: #64ffda;
     margin-bottom: 1.5rem;
     text-align: center;
+    animation: aparecer 1s ease-in-out;
 }
 
 .tarjetas-experiencia {
@@ -327,11 +356,13 @@ section {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-width: 400px;
     width: 100%;
+    /* animation: aparecer 2s ease-in-out; */
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta-experiencia:hover {
     transform: translateY(-5px);
+    animation: flotar 3s ease-in-out infinite;
     box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
 }
 
@@ -420,18 +451,21 @@ section p {
     color: #64ffda;
     margin-bottom: 2rem;
     text-align: center;
+    animation: aparecer 1s ease-in-out;
 }
 
 .proyecto {
     width: 100%;
     max-width: 1200px;
     margin-bottom: 4rem;
+    animation: aparecer 1.5s ease-in-out;
 }
 
 .contenido-proyecto {
     display: flex;
     align-items: center;
     gap: 2rem;
+    animation: aparecer 2s ease-in-out;
 }
 
 .contenido-proyecto.alternado {
@@ -446,6 +480,7 @@ section p {
     font-size: 1.75rem;
     color: #64ffda;
     margin-bottom: 1rem;
+    animation: aparecer 2s ease-in-out;
 }
 
 .texto-proyecto p {
@@ -453,6 +488,7 @@ section p {
     color: #8892b0;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    animation: aparecer 2s ease-in-out;
 }
 
 /* Estilos para los íconos de tecnologías */
@@ -470,6 +506,7 @@ section p {
 
 .tecnologias i:hover {
     color: #52d1b2;
+    animation: flotar 3s ease-in-out infinite;
 }
 
 /* Botón único */
@@ -535,6 +572,7 @@ section p {
     color: #64ffda;
     margin-bottom: 1rem;
     text-align: center;
+    animation: aparecer 1s ease-in-out;
 }
 
 .descripcion-contacto {
@@ -544,6 +582,7 @@ section p {
     max-width: 600px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
+    animation: aparecer 1.5s ease-in-out;
 }
 
 .contenido-contacto {
@@ -575,7 +614,7 @@ input, textarea {
 
 input:focus, textarea:focus {
     border-color: #52d1b2;
-    box-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
     outline: none;
 }
 
@@ -594,10 +633,13 @@ textarea {
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    animation: aparecer 2s ease-in-out;
 }
 
 .boton-enviar:hover {
     background-color: #52d1b2;
+    outline: none;
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
 }
 
 .mensaje-exito {

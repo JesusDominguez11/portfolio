@@ -23,6 +23,31 @@ document.querySelectorAll('nav a').forEach(anchor => {
 //     });
 // }); 
 
+// Detectar cuando una sección es visible
+const secciones = document.querySelectorAll('section');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+
+        if(entry.isIntersecting && secciones.seccion == "proyectos"){
+            entry.target.classList.add('visible');
+            threshold: 0.1
+        }else{
+            threshold: 0.4
+        }
+    });
+}, {
+    threshold: 0.4 // Activar la animación cuando el 10% de la sección sea visible
+});
+
+// Observar cada sección
+secciones.forEach(seccion => {
+    observer.observe(seccion);
+});
+
 // Ocultar/mostrar el navbar al hacer scroll
 let lastScroll = 0;
 const navbar = document.querySelector('nav');
