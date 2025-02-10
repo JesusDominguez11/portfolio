@@ -116,15 +116,17 @@ nav ul li a.active {
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
-/* Estilos para las secciones */
+/* Secciones */
 section {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    transition: background 0.5s ease;
 }
 
 /* Degradado suave entre secciones */
@@ -145,18 +147,6 @@ section {
 }
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-/* Secciones */
-section {
-    padding: 6rem 2rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    transition: background 0.5s ease;
-}
 
 
 /* Estilos para la sección de inicio */
