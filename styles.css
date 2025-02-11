@@ -538,7 +538,7 @@ section p {
 }
 
 .imagen-proyecto img {
-    width: 100%;
+    width: 20%;
     display: block;
 }
 
@@ -554,6 +554,39 @@ section p {
 
     .texto-proyecto, .imagen-proyecto {
         max-width: 100%;
+    }
+}
+
+/* Contenedor de imágenes del proyecto */
+.imagenes-proyecto {
+    display: flex;
+    gap: 1rem; /* Espacio entre las imágenes */
+    overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
+    padding: 1rem 0; /* Espaciado vertical */
+}
+
+.imagenes-proyecto img {
+    max-width: 300px; /* Ancho máximo de cada imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenes-proyecto img:hover {
+    transform: translateY(-5px); /* Efecto de elevación al hacer hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .imagenes-proyecto {
+        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra las imágenes */
+    }
+
+    .imagenes-proyecto img {
+        max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
     }
 }
 
