@@ -114,7 +114,7 @@ let currentIndex = 0;
 
 // Función para mover el carousel
 function moveCarousel(direction) {
-    const imageWidth = images[0].clientWidth; // Ancho de la imagen
+    const imageWidth = images[0].clientWidth; // Ancho de la imagen actual
     if (direction === 'next' && currentIndex < images.length - 1) {
         currentIndex++;
     } else if (direction === 'prev' && currentIndex > 0) {

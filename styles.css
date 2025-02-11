@@ -594,19 +594,22 @@ section p {
     justify-content: center;
     position: relative;
     width: 100%;
+    max-width: 700px; /* Ancho máximo del carousel */
+    margin: 0 auto; /* Centrar el carousel */
 }
 
 /* Contenedor interno del carousel */
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease; /* Animación de transición */
-    max-width: 700px; 
+    width: 100%; /* Ocupa el 100% del contenedor */
     overflow: hidden; /* Oculta las imágenes que no están en la vista */
 }
 
 /* Estilos para las imágenes */
 .carousel-inner img {
-    max-width: 700px; 
+    width: 100%; /* La imagen ocupa el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
     flex-shrink: 0; /* Evita que las imágenes se reduzcan */
@@ -658,6 +661,8 @@ section p {
         max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
     }
 }
+
+
 
 /* Estilos para la sección de contacto */
 #contacto {
