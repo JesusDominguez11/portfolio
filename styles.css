@@ -363,8 +363,8 @@ section.visible .contenido {
 }
 
 .tarjeta-experiencia:hover {
-    transform: translateY(-5px);
-    animation: flotar 3s ease-in-out infinite;
+    transform: translateY(-10px);
+    /* animation: flotar 3s ease-in-out infinite; */
     box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
 }
 
@@ -508,7 +508,7 @@ section p {
 
 .tecnologias i:hover {
     color: #52d1b2;
-    animation: flotar 3s ease-in-out infinite;
+    animation: flotar 1s ease-in-out ;
 }
 
 .boton-codigo {
@@ -538,7 +538,7 @@ section p {
 }
 
 .imagen-proyecto img {
-    width: 100%;
+    width: 20%;
     display: block;
 }
 
@@ -554,6 +554,108 @@ section p {
 
     .texto-proyecto, .imagen-proyecto {
         max-width: 100%;
+    }
+}
+
+/* Contenedor de imágenes del proyecto */
+.imagenes-proyecto {
+    display: flex;
+    gap: 1rem; 
+    overflow-x: auto; 
+    padding: 1rem 0;
+}
+
+.imagenes-proyecto img {
+    max-width: 300px; 
+    height: auto;
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenes-proyecto img:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+}
+
+
+
+
+
+
+
+
+
+
+/* Contenedor del carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+/* Contenedor interno del carousel */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease; /* Animación de transición */
+    max-width: 700px; 
+    overflow: hidden; /* Oculta las imágenes que no están en la vista */
+}
+
+/* Estilos para las imágenes */
+.carousel-inner img {
+    max-width: 700px; 
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    flex-shrink: 0; /* Evita que las imágenes se reduzcan */
+}
+
+/* Flechas de navegación */
+.carousel-prev, .carousel-next {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-prev {
+    left: 10px; /* Flecha izquierda */
+}
+
+.carousel-next {
+    right: 10px; /* Flecha derecha */
+}
+
+/* Efecto hover en las flechas */
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo más oscuro al hacer hover */
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .imagenes-proyecto {
+        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
+        align-items: center; /* Centra las imágenes */
+    }
+
+    .imagenes-proyecto img {
+        max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
     }
 }
 
