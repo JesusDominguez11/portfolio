@@ -103,3 +103,26 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+// Funcionalidad del carousel
+const carouselInner = document.querySelector('.carousel-inner');
+const prevButton = document.querySelector('.carousel-prev');
+const nextButton = document.querySelector('.carousel-next');
+const images = document.querySelectorAll('.carousel-inner img');
+let currentIndex = 0;
+
+// Función para mover el carousel
+function moveCarousel(direction) {
+    const imageWidth = images[0].clientWidth; // Ancho de la imagen
+    if (direction === 'next' && currentIndex < images.length - 1) {
+        currentIndex++;
+    } else if (direction === 'prev' && currentIndex > 0) {
+        currentIndex--;
+    }
+    carouselInner.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+}
+
+// Eventos para las flechas
+prevButton.addEventListener('click', () => moveCarousel('prev'));
+nextButton.addEventListener('click', () => moveCarousel('next'));
