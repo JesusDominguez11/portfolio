@@ -363,8 +363,8 @@ section.visible .contenido {
 }
 
 .tarjeta-experiencia:hover {
-    transform: translateY(-5px);
-    animation: flotar 3s ease-in-out infinite;
+    transform: translateY(-10px);
+    /* animation: flotar 3s ease-in-out infinite; */
     box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
 }
 
@@ -508,7 +508,7 @@ section p {
 
 .tecnologias i:hover {
     color: #52d1b2;
-    animation: flotar 3s ease-in-out infinite;
+    animation: flotar 1s ease-in-out ;
 }
 
 .boton-codigo {
