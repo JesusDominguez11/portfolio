@@ -56,18 +56,33 @@ nav {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #64ffda;
-}
-
-/* Animación del navbar al hacer scroll */
-nav {
     transition: transform 0.3s ease;
 }
 
+/* Animación del navbar al hacer scroll */
 nav.hide {
     transform: translateY(-100%);
 }
 
-nav ul {
+/* Contenedor del navbar */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Logo */
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-texto);
+    text-decoration: none;
+}
+
+/* Menú de navegación */
+.nav-links {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -75,12 +90,12 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+.nav-links li {
     margin: 0 1.5rem;
     position: relative;
 }
 
-nav ul li a {
+.nav-links li a {
     color: var(--color-texto);
     font-weight: 500;
     text-decoration: none;
@@ -89,12 +104,12 @@ nav ul li a {
     display: inline-block;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
     color: var(--color-destacado);
 }
 
 /* Línea inferior al hacer hover */
-nav ul li::after {
+.nav-links li::after {
     content: '';
     position: absolute;
     width: 0;
@@ -105,14 +120,60 @@ nav ul li::after {
     transition: width 0.3s ease;
 }
 
-nav ul li:hover::after {
+.nav-links li:hover::after {
     width: 100%;
 }
 
-nav ul li a.active {
-    color: #64ffda; /* Cambia el color del enlace activo */
-    border-bottom: 2px solid #64ffda; /* Subrayado para el enlace activo */
+.nav-links li a.active {
+    color: #64ffda;
+    border-bottom: 2px solid #64ffda;
 }
+
+/* -------- RESPONSIVE NAVBAR -------- */
+
+/* Botón hamburguesa */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    background: var(--color-texto);
+    width: 30px;
+    height: 3px;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Modo móvil */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: var(--color-fondo);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+}
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -632,7 +693,7 @@ section p {
 #contacto {
     /* background-color: #112240; */
     background-color: #0f172a;
-    padding: 4rem 2rem;
+    padding: 0rem 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -698,24 +759,6 @@ textarea {
     min-height: 150px;
 }
 
-/* .boton-enviar {
-    padding: 0.75rem 1.5rem;
-    background-color: #64ffda;
-    color: #0a192f;
-    border: none;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    animation: aparecer 2s ease-in-out;
-}
-
-.boton-enviar:hover {
-    background-color: #52d1b2;
-    outline: none;
-    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
-} */
 
 .boton-enviar {
     /* display: inline-block; */
