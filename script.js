@@ -105,24 +105,26 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Funcionalidad del carousel
-const carouselInner = document.querySelector('.carousel-inner');
-const prevButton = document.querySelector('.carousel-prev');
-const nextButton = document.querySelector('.carousel-next');
-const images = document.querySelectorAll('.carousel-inner img');
-let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.carousel').forEach(carousel => {
+        const inner = carousel.querySelector('.carousel-inner');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        const images = inner.querySelectorAll("img");
+        let index = 0;
 
-// Función para mover el carousel
-function moveCarousel(direction) {
-    const imageWidth = images[0].clientWidth; // Ancho de la imagen actual
-    if (direction === 'next' && currentIndex < images.length - 1) {
-        currentIndex++;
-    } else if (direction === 'prev' && currentIndex > 0) {
-        currentIndex--;
-    }
-    carouselInner.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
-}
+        function updateCarousel() {
+            inner.style.transform = `translateX(-${index * 100}%)`;
+        }
 
-// Eventos para las flechas
-prevButton.addEventListener('click', () => moveCarousel('prev'));
-nextButton.addEventListener('click', () => moveCarousel('next'));
+        prevBtn.addEventListener("click", function() {
+            index = (index - 1 + images.length) % images.length;
+            updateCarousel();
+        });
+
+        nextBtn.addEventListener("click", function() {
+            index = (index + 1) % images.length;
+            updateCarousel();
+        });
+    });
+});
