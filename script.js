@@ -36,7 +36,7 @@ document.querySelectorAll('nav a').forEach(anchor => {
 // Detectar cuando una sección es visible
 const secciones = document.querySelectorAll('section');
 
-var therS = 0.2;
+var therS = 0.1;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
             therS = 0.1
         }else{
-            therS = 0.3
+            therS = 0.2
         }
 
         console.log(therS);
