@@ -487,6 +487,7 @@ section p {
 
 .texto-proyecto p {
     font-size: 1rem;
+    justify-self: auto;
     color: #8892b0;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -538,7 +539,7 @@ section p {
     position: relative;
     overflow: hidden;
     max-width: 600px;
-    height: 700px; /* Agregar una altura fija */
+    height: 600px; /* Agregar una altura fija */
     border-radius: 10px;
 }
 
