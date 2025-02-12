@@ -88,7 +88,19 @@ nav.hide {
     justify-content: center;
     margin: 0;
     padding: 0;
+    
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
 }
+
+
+
+/* Cuando el menú está activo */
+.nav-links.active {
+    max-height: 300px; /* Ajusta según el contenido */
+}
+
 
 .nav-links li {
     margin: 0 1.5rem;
@@ -600,7 +612,7 @@ section p {
     position: relative;
     overflow: hidden;
     max-width: 600px;
-    height: 600px; /* Agregar una altura fija */
+    height: 500px; /* Agregar una altura fija */
     border-radius: 10px;
 }
 

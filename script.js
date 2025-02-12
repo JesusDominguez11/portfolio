@@ -1,6 +1,24 @@
 document.getElementById("menu-toggle").addEventListener("click", function() {
-    document.getElementById("nav-links").classList.toggle("active");
+    const navLinks = document.getElementById("nav-links");
+
+    if (navLinks.classList.contains("active")) {
+        navLinks.style.maxHeight = "0px";
+        setTimeout(() => navLinks.classList.remove("active"), 400); // Espera a que termine la animación
+    } else {
+        navLinks.classList.add("active");
+        navLinks.style.maxHeight = "300px"; // Ajusta según el contenido
+    }
 });
+
+// Cerrar el menú cuando se hace clic en un enlace con animación
+document.querySelectorAll("#nav-links li a").forEach(link => {
+    link.addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+        navLinks.style.maxHeight = "0px";
+        setTimeout(() => navLinks.classList.remove("active"), 400);
+    });
+});
+
 
 // Navegación suave mejorada
 document.querySelectorAll('nav a').forEach(anchor => {
@@ -15,22 +33,10 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-//ya no es necesario pq se cambio por: se uso html {    scroll-behavior: smooth; /* Habilita el desplazamiento suave en toda la página */}
-// // Desplazamiento suave para el botón "Ver mis proyectos"
-// document.querySelector('.boton-llamada').addEventListener('click', function (e) {
-//     e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-//     const targetId = this.getAttribute('href'); // Obtiene el ID de la sección de proyectos
-//     const targetSection = document.querySelector(targetId); // Selecciona la sección de proyectos
-//     targetSection.scrollIntoView({
-//         behavior: 'smooth', // Desplazamiento suave
-//         block: 'start'      // Alinea la sección en la parte superior de la ventana
-//     });
-// }); 
-
 // Detectar cuando una sección es visible
 const secciones = document.querySelectorAll('section');
 
-var therS = 0.3;
+var therS = 0.2;
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -41,7 +47,7 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.classList.add('visible');
             therS = 0.1
         }else{
-            therS = 0.4
+            therS = 0.3
         }
 
         console.log(therS);
