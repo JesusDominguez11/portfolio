@@ -9,14 +9,22 @@
 </head>
 <body>
     <!-- Menú de navegación -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+<nav>
+    <div class="nav-container">
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#sobre-mi">Sobre mí</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
         </ul>
-    </nav>
+    </div>
+</nav>
+
 
 <!-- Sección de inicio -->
 <section id="inicio">
@@ -72,116 +80,84 @@
 </div>
 </section>
 
+
+
+
+
 <!-- Sección de proyectos -->
 <section id="proyectos">
     <div class="contenido">
-    <h2>Proyectos</h2>
+        <h2>Proyectos</h2>
 
-<!-- Proyecto 1 -->
-<div class="proyecto">
-    <div class="contenido-proyecto">
-        <div class="texto-proyecto">
-            <h3>Visualizador de gráficos</h3>
-            <p>
-                Una aplicación móvil para visualización de gráficos 3D, gráficos 2D, animaciones, manejo de gestos, navegación entre ventanas, audio y temas personalizados.
-                Desarrollada en React Native con Expo y desplegada con Eas build.
-            </p>
-            <div class="tecnologias">
-                <i class="fab fa-react" title="React"></i>
-                <i class="fab fa-node-js" title="Node.js"></i>
-                <i class="fab fa-js" title="JavaScript"></i>
-                <i class="fab fa-css3-alt" title="CSS3"></i>
+        <!-- Proyecto 1 -->
+        <div class="proyecto">
+            <div class="contenido-proyecto">
+                <div class="texto-proyecto">
+                    <h3>Visualizador de gráficos</h3>
+                    <p>
+                        Una aplicación móvil para visualización de gráficos 3D, gráficos 2D, animaciones, manejo de gestos, navegación entre ventanas, audio y temas personalizados.
+                        Desarrollada en React Native con Expo y desplegada con Eas build.
+                    </p>
+                    <div class="tecnologias">
+                        <i class="fab fa-react" title="React"></i>
+                        <i class="fab fa-node-js" title="Node.js"></i>
+                        <i class="fab fa-js" title="JavaScript"></i>
+                        <i class="fab fa-css3-alt" title="CSS3"></i>
+                    </div>
+                    <a href="#" class="boton-codigo">Código en GitHub</a>
+                </div>
+                <!-- <div class="imagenes-proyecto"> -->
+                    <div class="carousel">
+                        <button class="carousel-prev">&#10094;</button>
+                        <div class="carousel-inner">
+                            <img src="./src/img/proyects/p1_123.jpeg" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p1_234.jpeg" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p1_345.jpeg" alt="Captura de la aplicación">
+                        </div>
+                        <button class="carousel-next">&#10095;</button>
+                    </div>
+                <!-- </div> -->
             </div>
-            <a href="#" class="boton-codigo">Código en GitHub</a>
         </div>
-        <div class="imagenes-proyecto">
-            <img src="./src/img/proyects/p1_123.jpeg" alt="Captura de la aplicación">
-            <img src="./src/img/proyects/p1_234.jpeg" alt="Captura de la aplicación">
-            <img src="./src/img/proyects/p1_345.jpeg" alt="Captura de la aplicación">
+
+        <!-- Proyecto 2 -->
+        <div class="proyecto">
+            <div class="contenido-proyecto alternado">
+                <div class="texto-proyecto">
+                    <h3>Aplicación de escritorio para fatiga visual</h3>
+                    <p>
+                        Una app de escritorio que evalúa niveles de fatiga visual del usuario con cuestionarios y provee funcionalidades de filtros estenopeicos, 
+                        filtro de luz azul y oscurecedor de pantalla para reducir la fatiga visual. Desarrollada con Windows Forms de .Net, MySql.
+                    </p>
+                    <div class="tecnologias">
+                        <i class="fab fa-windows" title="Windows Forms"></i>
+                        <i class="fab fa-csharp" title="C#"></i>
+                        <i class="fas fa-database" title="MySQL"></i>
+                        <i class="fas fa-laptop-code" title="Despliegue local"></i>
+                        <i class="fab fa-git" title="Git"></i>
+                    </div>
+                    <a href="#" class="boton-codigo">Código en GitHub</a>
+                </div>
+                <!-- <div class="imagenes-proyecto"> -->
+                    <div class="carousel">
+                        <button class="carousel-prev">&#10094;</button>
+                        <div class="carousel-inner">
+                            <img src="./src/img/proyects/p2_123.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p2_234.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p2_345.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p2_456.png" alt="Captura de la aplicación">
+                        </div>
+                        <button class="carousel-next">&#10095;</button>
+                    </div>
+                <!-- </div> -->
+            </div>
         </div>
     </div>
-</div>
-
-<!-- Proyecto 2 -->
-<div class="proyecto">
-    <div class="contenido-proyecto alternado">
-        <div class="texto-proyecto">
-            <h3>Aplicación de escritorio para fatiga visual</h3>
-            <p>
-                Una app de escritorio que evalúa niveles de fatiga visual del usuario con cuestionarios y provee funcionalidades de filtros estenopeicos, 
-                filtro de luz azul y oscurecedor de pantalla para reducir la fatiga visual. Desarrollada con Windows Forms de .Net, MySql.
-            </p>
-            <div class="tecnologias">
-                <i class="fab fa-windows" title="Windows Forms"></i>
-                <i class="fab fa-csharp" title="C#"></i>
-                <i class="fas fa-database" title="MySQL"></i>
-                <i class="fas fa-laptop-code" title="Despliegue local"></i>
-                <i class="fab fa-git" title="Git"></i>
-            </div>
-            <a href="#" class="boton-codigo">Código en GitHub</a>
-        </div>
-        <div class="imagenes-proyecto">
-            <div class="carousel">
-                <button class="carousel-prev">&#10094;</button> <!-- Flecha izquierda -->
-                <div class="carousel-inner">
-                    <img src="./src/img/proyects/p2_123.png" alt="Captura de la aplicación">
-                    <img src="./src/img/proyects/p2_234.png" alt="Captura de la aplicación">
-                    <img src="./src/img/proyects/p2_345.png" alt="Captura de la aplicación">
-                    <img src="./src/img/proyects/p2_456.png" alt="Captura de la aplicación">
-                </div>
-                <button class="carousel-next">&#10095;</button> <!-- Flecha derecha -->
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!-- Proyecto 3 -->
-    <!-- <div class="proyecto">
-        <div class="contenido-proyecto">
-            <div class="texto-proyecto">
-                <h3>Blog Personal</h3>
-                <p>
-                    Un blog personal donde comparto artículos sobre desarrollo web y tecnología. Desarrollado con Next.js, 
-                    Markdown para el contenido y desplegado en Vercel.
-                </p>
-                <div class="tecnologias">
-                    <i class="fab fa-js" title="JavaScript"></i>
-                    <i class="fab fa-react" title="React"></i>
-                    <i class="fab fa-node-js" title="Node.js"></i>
-                    <i class="fab fa-markdown" title="Markdown"></i>
-                </div>
-                <a href="#" class="boton-codigo">Código en GitHub</a>
-            </div>
-            <div class="imagen-proyecto">
-                <img src="ruta/a/captura-proyecto3.png" alt="Captura del Proyecto 3">
-            </div>
-        </div>
-    </div> -->
-
-    <!-- Proyecto 4 -->
-    <!-- <div class="proyecto">
-        <div class="contenido-proyecto alternado">
-            <div class="texto-proyecto">
-                <h3>Aplicación de Notas</h3>
-                <p>
-                    Una aplicación móvil para tomar notas rápidas, con sincronización en la nube. Desarrollada con Flutter 
-                    y Firebase para la autenticación y almacenamiento.
-                </p>
-                <div class="tecnologias">
-                    <i class="fab fa-flutter" title="Flutter"></i>
-                    <i class="fab fa-firebase" title="Firebase"></i>
-                    <i class="fab fa-android" title="Android"></i>
-                    <i class="fab fa-apple" title="iOS"></i>
-                </div>
-                <a href="#" class="boton-codigo">Código en GitHub</a>
-            </div>
-            <div class="imagen-proyecto">
-                <img src="ruta/a/captura-proyecto4.png" alt="Captura del Proyecto 4">
-            </div>
-        </div>
-    </div> -->
-</div>
 </section>
+
+
+
+
 
 <!-- Sección de contacto -->
 <section id="contacto">
