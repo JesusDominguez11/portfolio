@@ -564,7 +564,7 @@ section p {
 .carousel-inner {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    /* width: 100%; */
+    width: 100%;
 }
 
 .carousel img {
