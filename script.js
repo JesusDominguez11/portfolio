@@ -2,7 +2,7 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
     const navLinks = document.getElementById("nav-links");
 
     if (navLinks.classList.contains("active")) {
-        navLinks.style.maxHeight = "0px";
+
         setTimeout(() => navLinks.classList.remove("active"), 400); // Espera a que termine la animación
     } else {
         navLinks.classList.add("active");
@@ -14,7 +14,6 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
 document.querySelectorAll("#nav-links li a").forEach(link => {
     link.addEventListener("click", function() {
         const navLinks = document.getElementById("nav-links");
-        navLinks.style.maxHeight = "0px";
         setTimeout(() => navLinks.classList.remove("active"), 400);
     });
 });
