@@ -566,6 +566,7 @@ section p {
     line-height: 1.6;
     margin-bottom: 1.5rem;
     animation: aparecer 2s ease-in-out;
+    text-align: justify;
 }
 
 /* Estilos para los íconos de tecnologías */
