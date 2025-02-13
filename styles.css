@@ -402,6 +402,7 @@ section.visible .contenido {
     margin: 0 auto 2rem auto;
     text-align: center;
     animation: aparecer 1.5s ease-in-out;
+    text-align: justify;
 }
 
 .experiencia {
