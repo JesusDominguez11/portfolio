@@ -292,6 +292,7 @@ section.visible .contenido {
     line-height: 1.8;
     margin-bottom: 2rem;
     animation: aparecer 2s ease-in-out;
+    text-align: justify;
 }
 
 .boton-llamada {
