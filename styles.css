@@ -839,12 +839,11 @@ footer {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 2rem;
 }
 
 .info-contacto, .redes-sociales {
-    flex: 1;
     min-width: 250px;
 }
 
