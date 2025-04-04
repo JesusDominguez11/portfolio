@@ -241,6 +241,103 @@ section.visible .contenido {
     background: linear-gradient(to bottom, var(--color-seccion-1), var(--color-seccion-2));
 }
 
+
+
+
+
+
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+/* Estilos para la sección QR */
+.qr-section {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.qr-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.qr-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.qr-section a {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.qr-section a:hover {
+    transform: scale(1.2);
+}
+
+.qr-text {
+    color: #8892b0;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#qr-container {
+    background-color: white;
+    /* padding: 0.5rem; */
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.qr-image {
+    width: 120px;
+    height: 120px;
+    display: block;
+}
+
+.qr-alternative {
+    color: #8892b0;
+    font-size: 0.9rem;
+}
+
+.qr-link {
+    color: #64ffda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* .qr-link:hover {
+    text-decoration: underline;
+    color: #52d9c4;
+} */
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    .qr-section {
+        align-items: center;
+        text-align: center;
+    }
+    
+    #qr-container {
+        margin: 0 auto;
+    }
+}
+
+/* --------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
