@@ -186,9 +186,57 @@ nav.hide {
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
-
-/* Secciones */
+/* Transiciones para secciones */
 section {
+    padding: 6rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all 0.6s ease-out;
+}
+
+section .contenido {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado visible */
+section.visible .contenido {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estado oculto */
+section.hidden .contenido {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Animaciones específicas para la sección de proyectos */
+section#proyectos .contenido {
+    transition-delay: 0.1s;
+}
+
+/* QR flotante */
+.qr-fixed {
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efecto de desvanecimiento suave para las secciones */
+section {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+section.hidden {
+    opacity: 0.3;
+}
+/* Secciones */
+/* section {
     padding: 6rem 2rem;
     min-height: 100vh;
     display: flex;
@@ -198,10 +246,10 @@ section {
     text-align: center;
 
     transition: background 0.9s ease;
-}
+} */
 
 /* Animación para mostrar el contenido */
-@keyframes aparecer {
+/* @keyframes aparecer {
     from {
         opacity: 0;
         transform: translateY(20px);
@@ -210,10 +258,10 @@ section {
         opacity: 1;
         transform: translateY(0);
     }
-}
+} */
 
 /* Aplicar animación a los elementos de las secciones */
-section .contenido {
+/* section .contenido {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
@@ -222,7 +270,9 @@ section .contenido {
 section.visible .contenido {
     opacity: 1;
     transform: translateY(0);
-}
+} */
+
+
 
 /* Degradado suave entre secciones */
 #inicio {

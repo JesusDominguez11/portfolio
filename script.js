@@ -32,33 +32,101 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Detectar cuando una sección es visible
-const secciones = document.querySelectorAll('section');
 
-var therS = 0.1;
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuración del QR flotante
+    const qrFixed = document.querySelector('.qr-fixed');
+    const secciones = document.querySelectorAll('section');
+    let lastScroll = window.pageYOffset;
+    let ticking = false;
+
+    // 1. Manejo del QR flotante
+    const updateQrVisibility = () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Comportamiento del QR
+        if (qrFixed) {
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                // Scroll hacia abajo
+                qrFixed.style.opacity = '0';
+                qrFixed.style.pointerEvents = 'none';
+                qrFixed.style.transform = 'translateY(20px)';
+            } else {
+                // Scroll hacia arriba
+                qrFixed.style.opacity = '1';
+                qrFixed.style.pointerEvents = 'auto';
+                qrFixed.style.transform = 'translateY(0)';
+            }
         }
 
-        if(secciones.seccion == 'proyectos'){
-            entry.target.classList.add('visible');
-            therS = 0.1
-        }else{
-            therS = 0.2
-        }
+        // 2. Manejo de las secciones
+        secciones.forEach(seccion => {
+            const rect = seccion.getBoundingClientRect();
+            const isVisible = (rect.top <= window.innerHeight * 0.8) && 
+                            (rect.bottom >= window.innerHeight * 0.2);
 
-        console.log(therS);
+            if (isVisible) {
+                seccion.classList.add('visible');
+                seccion.classList.remove('hidden');
+            } else {
+                // Solo ocultar si no es la sección actual
+                if (currentScroll > rect.bottom || currentScroll < rect.top) {
+                    seccion.classList.remove('visible');
+                    seccion.classList.add('hidden');
+                }
+            }
+        });
+
+        lastScroll = currentScroll;
+        ticking = false;
+    };
+
+    const onScroll = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(updateQrVisibility);
+            ticking = true;
+        }
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    // 3. Intersection Observer para animaciones iniciales
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                entry.target.classList.remove('hidden');
+            }
+        });
+    }, {
+        threshold: 0.9
     });
-}, {
-    threshold: therS // Activar la animación cuando el 10% de la sección sea visible
+
+    // Observar cada sección
+    secciones.forEach(seccion => {
+        observer.observe(seccion);
+    });
+
+    // Inicializar con el estado correcto
+    updateQrVisibility();
 });
 
-// Observar cada sección
-secciones.forEach(seccion => {
-    observer.observe(seccion);
-});
 
 // Ocultar/mostrar el navbar al hacer scroll
 let lastScroll = 0;
