@@ -218,3 +218,61 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Verificar si ya se envió el formulario en esta sesión
+    if(sessionStorage.getItem('visitTracked')) return;
+    
+    // Obtener más datos del visitante
+    const visitData = {
+      _subject: `Visita a tu portafolio - ${new Date().toLocaleDateString()}`,
+      url: window.location.href,
+      time: new Date().toLocaleString(),
+      device: /Mobi|Android/i.test(navigator.userAgent) ? 'Móvil' : 'Escritorio',
+      screen: `${window.screen.width}x${window.screen.height}`,
+      referrer: document.referrer || 'Directo'
+    };
+  
+    // Configurar los encabezados
+    const headers = new Headers();
+    headers.append('Accept', 'application/json');
+    
+    // Configurar el cuerpo del envío
+    const formData = new FormData();
+    for(const key in visitData) {
+      formData.append(key, visitData[key]);
+    }
+  
+    // Enviar los datos
+    fetch('https://formsubmit.co/ajax/romandominguezgarcia.01@gmail.com', {
+      method: 'POST',
+      headers: headers,
+      body: formData,
+      mode: 'cors' // Importante para peticiones entre dominios
+    })
+    .then(response => {
+      if(response.ok) {
+        sessionStorage.setItem('visitTracked', 'true');
+        console.log('Visita registrada exitosamente');
+      }
+    })
+    .catch(error => {
+      console.error('Error al registrar visita:', error);
+      // Opcional: Reintentar después de un tiempo
+      setTimeout(() => {
+        fetch('https://formsubmit.co/ajax/romandominguezgarcia.01@gmail.com', {
+          method: 'POST',
+          headers: headers,
+          body: formData
+        });
+      }, 5000);
+    });
+  });
+
+
+
+
+
+
+
