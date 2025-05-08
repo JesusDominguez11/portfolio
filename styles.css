@@ -576,7 +576,7 @@ section.visible .contenido {
     background-color: #0a192f;
     padding: 1.5rem;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
     max-width: 400px;
     width: 100%;
     /* animation: aparecer 2s ease-in-out; */
@@ -586,7 +586,7 @@ section.visible .contenido {
 .tarjeta-experiencia:hover {
     transform: translateY(-10px);
     /* animation: flotar 3s ease-in-out infinite; */
-    box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+    box-shadow: 0 12px 24px rgba(100, 255, 218, 0.3);
 }
 
 .tarjetas-experiencia:hover .tarjeta-experiencia:not(:hover) {
@@ -636,6 +636,71 @@ section.visible .contenido {
         font-size: 0.9rem;
     }
 }
+
+
+
+/* Estilos existentes que ya tienes */
+.descripcion {
+    font-size: 1rem;
+    color: #8892b0;
+    line-height: 1.6;
+}
+
+/* Nuevos estilos para esta tarjeta */
+.lista-experiencia {
+    margin: 0.8rem 0;
+    padding-left: 1.2rem;
+}
+
+.lista-experiencia li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.lista-experiencia li::before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    color: #64ffda;
+}
+
+.focus-title {
+    margin-top: 1rem;
+    color: #ccd6f6;
+}
+
+.focus-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.focus-item {
+    background: rgba(100, 255, 218, 0.1);
+    color: #64ffda;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #proyectos {
     background-color: var(--color-fondo);
