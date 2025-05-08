@@ -565,6 +565,57 @@ section.hidden {
 }
 
 /* ===== VISTA DETALLADA ===== */
+/* ===== VISTA DETALLADA CENTRADA ===== */
+.detailed-view .habilidades-tecnicas {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.detailed-view .categoria-habilidad {
+    margin-bottom: 4rem;
+}
+
+.detailed-view .categoria-habilidad h3 {
+    justify-content: center;
+    text-align: center;
+}
+
+.detailed-view .subcategoria {
+    margin-left: 0;
+    text-align: center;
+}
+
+.detailed-view .items-habilidad {
+    justify-content: center;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .detailed-view .habilidades-tecnicas {
+        padding: 0;
+    }
+    
+    .detailed-view .categoria-habilidad h3 {
+        font-size: 1.1rem;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .detailed-view .items-habilidad {
+        justify-content: flex-start;
+    }
+}
+
+
+
+
+
+
+
+
+
+
 .habilidades-tecnicas {
     padding: 0;
 }
