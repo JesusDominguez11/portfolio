@@ -462,7 +462,7 @@ section.visible .contenido {
 }
 
 .imagen-perfil {
-    max-width: 400px;
+    max-width: 300px;
     animation: flotar 3s ease-in-out infinite;
 }
 
@@ -735,8 +735,42 @@ section p {
     animation: flotar 1s ease-in-out ;
 }
 
-.boton-codigo {
+/* .boton-codigo {
     display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
+
+.boton-codigo:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+} */
+
+/* Contenedores (estructura) */
+.botones-codigo {
+    /* display: flex; */
+    gap: 10px;
+    /* margin-bottom: 10px; */
+    margin-bottom: 1rem;
+}
+
+.boton-visitar-contenedor {
+    margin-top: 5px;
+}
+
+/* Botón de código (estilo original que ya tenías) */
+.boton-codigo {
+    display: inline-flex; /* Cambiado a flex para alinear icono + texto */
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
     padding: 0.5rem 1rem;
     background-color: transparent;
     border: 1px solid #64ffda;
@@ -753,7 +787,26 @@ section p {
     color: #0a192f;
 }
 
+/* Nuevo botón "Visita el sitio web" (estilo coherente con tu tema) */
+.boton-visitar {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #64ffda; /* Color rosa/azul para contrastar */
+    border-radius: 4px;
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
 
+.boton-visitar:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
 
 
 
