@@ -33,22 +33,6 @@ document.querySelectorAll('nav a').forEach(anchor => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Configuración del QR flotante
     const qrFixed = document.querySelector('.qr-fixed');
@@ -272,6 +256,49 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggle-view-btn');
+    const carouselView = document.getElementById('carousel-view');
+    const detailedView = document.getElementById('detailed-view');
+    const btnText = toggleBtn.querySelector('.btn-text');
+
+    function updateButtonText() {
+        const isDetailedView = detailedView.classList.contains('active-view');
+        const icon = isDetailedView ? 'fa-list' : 'fa-eye';
+        const text = isDetailedView ? 'View Carousel' : 'View Detailed';
+        
+        toggleBtn.innerHTML = `<i class="fas ${icon}"></i> ` + 
+            (window.innerWidth > 480 ? `<span class="btn-text">${text}</span>` : '');
+    }
+
+    toggleBtn.addEventListener('click', function() {
+        carouselView.classList.toggle('active-view');
+        detailedView.classList.toggle('active-view');
+        updateButtonText();
+    });
+
+    window.addEventListener('resize', updateButtonText);
+    updateButtonText(); // Inicializar
+});
 
 
 
