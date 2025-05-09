@@ -32,7 +32,7 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0a192f;
+    background-color: #1d4753;
     color: #ccd6f6;
     line-height: 1.6;
 }
@@ -286,6 +286,7 @@ nav.hide {
         margin: 1rem 0;
     }
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
 
@@ -377,21 +378,29 @@ section.hidden {
     opacity: 0.3;
 }
 
-#inicio {
+/* #inicio {
     background: linear-gradient(to bottom, var(--color-seccion-1), var(--color-seccion-2));
+}
+
+#experiencia {
+    background: linear-gradient(to top, var(--color-seccion-2), var(--color-seccion-2));
+}
+
+#experiencia {
+    background: linear-gradient(to bottom, var(--color-seccion-2), var(--color-seccion-1));
+}
+
+#proyectos {
+    background: linear-gradient(to top, var(--color-seccion-1), var(--color-seccion-1));
 }
 
 #sobre-mi {
     background: linear-gradient(to top, var(--color-seccion-2), var(--color-seccion-2));
 }
 
-#proyectos {
-    background: linear-gradient(to bottom, var(--color-seccion-2), var(--color-seccion-1));
-}
-
 #contacto {
     background: linear-gradient(to bottom, var(--color-seccion-1), var(--color-seccion-2));
-}
+} */
 
 
 
@@ -438,7 +447,7 @@ section.hidden {
 /* ESTILOS PARA LA SECCION DE INICIO */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 #inicio {
-    background-color: #1d4753;
+    /* background-color: #1d4753; */
     padding: 4rem 2rem;
     margin-top: 1rem;
     min-height: 100vh;
@@ -658,6 +667,16 @@ section.hidden {
 
 /* ESTILOS PARA LA SECCION DE EXPERIEMCIA */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+#experiencia {
+    /* background-color: #1d4753; */
+    padding: 4rem 2rem;
+    /* margin-top: 1rem; */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .experiencia {
     margin-top: 2rem;
 }
@@ -829,7 +848,7 @@ section.hidden {
 /* ESTILOS PARA LA SECCION DE PROYECTOS */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 #proyectos {
-    background-color: #1d4753;
+    /* background-color: #1d4753; */
     padding: 4rem 2rem;
     min-height: 100vh;
     display: flex;
@@ -1107,6 +1126,7 @@ section.hidden {
 /* ESTILOS PARA LA SECCION DE SOBRE MI */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 #sobre-mi {
+    /* background-color: #1d4753; */
     display: inherit;
     min-height: 20vh;
 }
@@ -1400,7 +1420,7 @@ section.hidden {
 /* ESTILOS PARA LA SECCION DE CONTACTO */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 #contacto {
-    background-color: #0f172a;
+    /* background-color: #0f172a; */
     padding: 0rem 2rem;
     min-height: 100vh;
     display: flex;
