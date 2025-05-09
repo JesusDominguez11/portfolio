@@ -95,12 +95,63 @@ nav.hide {
 }
 
 /* Contenedor del navbar */
-.nav-container {
-    /* display: flex; */
+/* .nav-container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
+} */
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contenedor para el menú hamburguesa y el icono */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem; 
+}
+
+.nav-right {
+    align-items: center;
+}
+
+/* Estilos para el icono */
+.nav-icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon-img {
+    width: 40px; /* Ajusta según necesites */
+    height: 40px; /* Ajusta según necesites */
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.icon-img:hover {
+    transform: scale(1.1);
+}
+
+/* Ajustes para móvil */
+@media (max-width: 600px) {
+    .nav-left {
+        width: 100%;
+        justify-content: start;
+    }
+    
+    .nav-icon {
+        order: 1; /* Coloca el icono a la derecha */
+    }
+    
+    .menu-toggle {
+        order: 0; /* Coloca el menú hamburguesa a la izquierda */
+    }
 }
 
 /* Logo */
@@ -110,6 +161,8 @@ nav.hide {
     color: var(--color-texto);
     text-decoration: none;
 }
+
+
 
 /* Menú de navegación */
 .nav-links {
@@ -216,6 +269,42 @@ nav.hide {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 /* Transiciones para secciones */
@@ -234,7 +323,7 @@ section .contenido {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    transition-duration: 1.5s; /* Más lento */
+    transition-duration: 1.5s; 
 }
 
 /* Estado visible */
