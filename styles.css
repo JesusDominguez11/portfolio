@@ -45,6 +45,36 @@ a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Navbar moderno */
 nav {
@@ -168,7 +198,7 @@ nav.hide {
         background-color: var(--color-fondo);
         position: absolute;
         top: 60px;
-        left: 0;
+        left: -30px;
         width: 100%;
         text-align: center;
         padding: 1rem 0;
@@ -264,6 +294,40 @@ section.hidden {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Estilos para la sección QR */
 .qr-section {
@@ -344,17 +408,6 @@ section.hidden {
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
-
-
-
-
-
-
-
-
-
-
-
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -428,7 +481,7 @@ section.hidden {
 }
 
 .imagen-perfil {
-    max-width: 300px;
+    max-width: 250px;
     animation: flotar 3s ease-in-out infinite;
 }
 
@@ -479,9 +532,67 @@ section.hidden {
 
     .imagen-perfil {
         margin-top: 2rem;
-        max-width: 300px;
+        max-width: 180px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -494,6 +605,8 @@ section.hidden {
 /* Estilos para la sección sobre mí */
 #sobre-mi {
     display: inherit;
+    /* margin-bottom: -10rem; */
+    min-height: 20vh;
 }
 
 .contenido-sobre-mi {
@@ -537,6 +650,7 @@ section.hidden {
 .habilidades-container {
     position: relative;
     border-radius: 10px;
+    margin-top: 6rem;
 }
 
 .habilidades-header {
@@ -619,15 +733,6 @@ section.hidden {
     }
 }
 
-
-
-
-
-
-
-
-
-
 .habilidades-tecnicas {
     padding: 0;
 }
@@ -692,6 +797,7 @@ section.hidden {
     color: #64ffda;
     border: 1px solid #64ffda;
     padding: 0.6rem 1.2rem;
+    margin-bottom: 2rem;
     border-radius: 20px;
     cursor: pointer;
     align-items: center;
@@ -764,6 +870,47 @@ section.hidden {
         display: none;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -910,6 +1057,38 @@ section.hidden {
     border-radius: 4px;
     font-size: 0.9rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1143,25 +1322,6 @@ section p {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
     .imagenes-proyecto {
@@ -1173,6 +1333,63 @@ section p {
         max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
     }
 }
+
+@media (max-width: 480px) {
+    .carousel {
+        /* position: relative;
+        overflow: hidden;
+        max-width: 600px; */
+        height: auto; /* Agregar una altura fija */
+        /* border-radius: 10px; */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1298,6 +1515,38 @@ textarea {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 /* Estilos para el footer */
 footer {
@@ -1379,6 +1628,44 @@ footer a:hover {
     }
 }
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
