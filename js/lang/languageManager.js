@@ -96,30 +96,51 @@ async function loadTranslations(lang) {
 }
 
 function applyTranslations(lang) {
-    // Traducir textos
-    document.querySelectorAll('[data-i18n]').forEach(el => {
+    // Traducir textos normales (que no contienen HTML)
+    document.querySelectorAll('[data-i18n]:not([data-i18n-html])').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang]?.[key]) {
             el.textContent = translations[lang][key];
         }
     });
 
-    // Traducir atributos alt y aria-label
+    // Traducir textos que contienen HTML
+    document.querySelectorAll('[data-i18n][data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang]?.[key]) {
+            el.innerHTML = translations[lang][key]; // Usamos innerHTML en lugar de textContent
+        }
+    });
+
+    // Actualizar atributos alt
     document.querySelectorAll('[data-i18n-alt]').forEach(el => {
         const key = el.getAttribute('data-i18n-alt');
         if (translations[lang]?.[key]) {
             el.setAttribute('alt', translations[lang][key]);
-            if (el.parentElement.tagName === 'A') {
-                el.parentElement.setAttribute('aria-label', translations[lang][key]);
-            }
         }
     });
 
-    // Actualizar botón de idioma
-    const langBtn = document.querySelector('.language-btn');
-    if (langBtn) {
-        langBtn.textContent = lang.toUpperCase();
+    // Traducir tooltips de tecnologías
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+    const key = el.getAttribute('data-i18n-title');
+    if (translations[lang]?.[key]) {
+        el.setAttribute('title', translations[lang][key]);
     }
+});
+
+// Traducir placeholders
+document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (translations[lang]?.[key]) {
+        el.setAttribute('placeholder', translations[lang][key]);
+    }
+});
+
+    // // Actualizar botón de idioma
+    // const langBtn = document.querySelector('.language-btn');
+    // if (langBtn) {
+    //     langBtn.textContent = translations[lang]['current-language'];
+    // }
 }
 
 function persistLanguagePreference(lang) {
