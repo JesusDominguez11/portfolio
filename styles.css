@@ -1,14 +1,13 @@
 /* Estilos generales */
 :root {
-    --color-fondo: #020c1b; /* Azul oscuro */
-    --color-secundario: #112240; /* Azul un poco más claro */
-    --color-texto: #ccd6f6; /* Blanco azulado */
-    --color-destacado: #64ffda; /* Verde azulado */
-    --color-hover: #52d1b2; /* Verde azulado más oscuro */
-    --color-borde: #233554; /* Borde azul grisáceo */
-    --color-fondo-suave: rgba(100, 255, 218, 0.1); /* Fondo suave para efectos */
+    --color-fondo: #020c1b;
+    --color-secundario: #112240; 
+    --color-texto: #ccd6f6; 
+    --color-destacado: #64ffda; 
+    --color-hover: #52d1b2; 
+    --color-borde: #233554; 
+    --color-fondo-suave: rgba(100, 255, 218, 0.1); 
 
-    /* Colores de las secciones */
     --color-seccion-1: #1d4753;
     --color-seccion-2: #0f172a;
 
@@ -24,7 +23,36 @@
     --mobile-text: 0.9rem;
     --mobile-subtext:0.8rem;
 }
-/* Animaciones */
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a192f;
+    color: #ccd6f6;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #64ffda;
+}
+
+a {
+    color: #64ffda;
+    text-decoration: none;
+}
+
+
+a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
+    position: relative;
+    z-index: 10; 
+}
+
+/* ANIMACIONES */
 @keyframes aparecer {
     from {
         opacity: 0;
@@ -48,33 +76,6 @@
     }
 }
 
-html {
-    scroll-behavior: smooth; /* Habilita el desplazamiento suave en toda la página */
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0a192f;
-    color: #ccd6f6;
-    line-height: 1.6;
-}
-
-h1, h2, h3 {
-    color: #64ffda;
-}
-
-a {
-    color: #64ffda;
-    text-decoration: none;
-}
-
-/* Asegurar que los elementos interactivos tengan un z-index mayor */
-a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
-    position: relative;
-    z-index: 10; /* Cualquier valor mayor que 1 (z-index del cursor secundario) */
-}
 
 
 
@@ -108,10 +109,8 @@ a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
 
 
 
-
-
+/* SECCION DEL NAVBAR */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-/* Navbar moderno */
 nav {
     background-color: var(--color-fondo);
     padding: 1rem 2rem;
@@ -124,7 +123,6 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* Animación del navbar al hacer scroll */
 nav.hide {
     transform: translateY(-100%);
 }
@@ -136,7 +134,6 @@ nav.hide {
     margin: 0 auto;
 }
 
-/* Contenedor para el menú hamburguesa y el icono */
 .nav-left {
     display: flex;
     align-items: center;
@@ -147,15 +144,14 @@ nav.hide {
     align-items: center;
 }
 
-/* Estilos para el icono */
 .nav-icon {
     display: flex;
     align-items: center;
 }
 
 .icon-img {
-    width: 40px; /* Ajusta según necesites */
-    height: 40px; /* Ajusta según necesites */
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -164,7 +160,6 @@ nav.hide {
     transform: scale(1.1);
 }
 
-/* Ajustes para móvil */
 @media (max-width: 600px) {
     .nav-left {
         width: 100%;
@@ -172,15 +167,14 @@ nav.hide {
     }
     
     .nav-icon {
-        order: 1; /* Coloca el icono a la derecha */
+        order: 1;
     }
     
     .menu-toggle {
-        order: 0; /* Coloca el menú hamburguesa a la izquierda */
+        order: 0; 
     }
 }
 
-/* Logo */
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -188,9 +182,6 @@ nav.hide {
     text-decoration: none;
 }
 
-
-
-/* Menú de navegación */
 .nav-links {
     list-style: none;
     display: flex;
@@ -201,13 +192,9 @@ nav.hide {
     transition: max-height 0.4s ease-in-out;
 }
 
-
-
-/* Cuando el menú está activo */
 .nav-links.active {
-    max-height: 300px; /* Ajusta según el contenido */
+    max-height: 300px;
 }
-
 
 .nav-links li {
     margin: 0 1.5rem;
@@ -227,7 +214,6 @@ nav.hide {
     color: var(--color-destacado);
 }
 
-/* Línea inferior al hacer hover */
 .nav-links li::after {
     content: '';
     position: absolute;
@@ -248,9 +234,6 @@ nav.hide {
     border-bottom: 2px solid #64ffda;
 }
 
-/* -------- RESPONSIVE NAVBAR -------- */
-
-/* Botón hamburguesa */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -265,7 +248,6 @@ nav.hide {
     transition: 0.3s;
 }
 
-/* Modo móvil */
 @media (max-width: 600px) {
     .menu-toggle {
         display: flex;
@@ -287,7 +269,6 @@ nav.hide {
 
     .nav-links.active {
         display: flex;
-        /* min-height: 800px; */
     }
 
     .nav-links li {
@@ -332,8 +313,6 @@ nav.hide {
 
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
-/* Transiciones para secciones */
 section {
     padding: 6rem 2rem;
     min-height: 100vh;
@@ -352,39 +331,32 @@ section .contenido {
     transition-duration: 1.5s; 
 }
 
-/* Estado visible */
 section.visible .contenido {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Estado oculto */
 section.hidden .contenido {
     opacity: 0;
     transform: translateY(20px);
 }
 
-/* Animaciones específicas para la sección de proyectos */
 section#proyectos .contenido {
     transition-delay: 0.1s;
 }
 
-/* Títulos de sección */
 section h2 {
     font-size: var(--desktop-title);
     margin-bottom: 2rem;
     color: var(--color-destacado);
 }
 
-/* Texto general */
 section p {
     max-width: 800px;
     line-height: 1.8;
     color: var(--color-texto);
 }
 
-
-/* Efecto de desvanecimiento suave para las secciones */
 section {
     opacity: 1;
     transition: opacity 0.5s ease;
@@ -394,9 +366,6 @@ section.hidden {
     opacity: 0.3;
 }
 
-
-
-/* Degradado suave entre secciones */
 #inicio {
     background: linear-gradient(to bottom, var(--color-seccion-1), var(--color-seccion-2));
 }
@@ -1074,6 +1043,7 @@ section.hidden {
         height: auto;
     }
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
 
@@ -1123,11 +1093,10 @@ section.hidden {
 
 
 
-
-/* Estilos para la sección sobre mí */
+/* ESTILOS PARA LA SECCION DE SOBRE MI */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 #sobre-mi {
     display: inherit;
-    /* margin-bottom: -10rem; */
     min-height: 20vh;
 }
 
@@ -1139,7 +1108,7 @@ section.hidden {
 }
 
 #sobre-mi h2 {
-    font-size: 2.5rem;
+    font-size: var(--desktop-title);
     color: #64ffda;
     margin-bottom: 2rem;
     text-align: center;
@@ -1147,7 +1116,7 @@ section.hidden {
 }
 
 .descripcion-sobre-mi p {
-    font-size: 1rem;
+    font-size: var(--desktop-text);
     color: #8892b0;
     line-height: 1.8;
     max-width: 800px;
@@ -1168,7 +1137,6 @@ section.hidden {
     font-weight: 500;
 }
 
-/* ===== SECCIÓN HABILIDADES ===== */
 .habilidades-container {
     position: relative;
     border-radius: 10px;
@@ -1183,7 +1151,28 @@ section.hidden {
     gap: 1rem;
 }
 
-/* ===== VISTA CARRUSEL ===== */
+.toggle-view-btn {
+    display: inline-flex; 
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    border-radius: 20px;
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--desktop-subtext);
+    transition: background-color 0.6s ease, color 0.6s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
+
+.toggle-view-btn:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+
 .skills-view {
     display: none;
 }
@@ -1212,7 +1201,6 @@ section.hidden {
     100% { transform: translateX(-50%); }
 }
 
-/* ===== VISTA DETALLADA CENTRADA ===== */
 .detailed-view .habilidades-tecnicas {
     max-width: 900px;
     margin: 0 auto;
@@ -1224,7 +1212,7 @@ section.hidden {
     margin-bottom: 4rem;
 }
 
-.detailed-view .categoria-habilidad h3 {
+.detailed-view .categoria-habilidad h4 {
     justify-content: center;
     text-align: center;
 }
@@ -1238,23 +1226,6 @@ section.hidden {
     justify-content: center;
 }
 
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .detailed-view .habilidades-tecnicas {
-        padding: 0;
-    }
-    
-    .detailed-view .categoria-habilidad h3 {
-        font-size: 1.1rem;
-        flex-direction: column;
-        gap: 5px;
-    }
-    
-    .detailed-view .items-habilidad {
-        justify-content: center;
-    }
-}
-
 .habilidades-tecnicas {
     padding: 0;
 }
@@ -1263,27 +1234,16 @@ section.hidden {
     margin-bottom: 1.8rem;
 }
 
-.categoria-habilidad h3 {
-    color: #64ffda;
-    font-size: 1.2rem;
+.categoria-habilidad h4 {
+    color: var(--color-texto);
+    font-size: var(--desktop-text);
+    font-weight: 800;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.subcategoria {
-    margin-left: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.subcategoria h4 {
-    color: #ccd6f6;
-    font-size: 1rem;
-    margin: 0.8rem 0;
-}
-
-/* ===== ELEMENTOS COMPARTIDOS ===== */
 .skill-item {
     background: rgba(100, 255, 218, 0.1);
     padding: 0.7rem 1.1rem;
@@ -1291,21 +1251,23 @@ section.hidden {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.9rem;
+    font-size: var(--desktop-text);
     white-space: nowrap;
     border: 1px solid rgba(100, 255, 218, 0.3);
     transition: all 0.3s ease;
     margin-bottom: 0.5rem;
+    color: #64ffda;
+    
 }
 
 .skill-item:hover {
-    transform: translateY(-3px);
-    background: rgba(100, 255, 218, 0.2);
+    color: var(--color-texto);
+    transform: translateY(-6px);
+    background: #060f1b;
 }
 
 .skill-item i {
-    color: #64ffda;
-    font-size: 0.9rem;
+    font-size: var(--desktop-text);
 }
 
 .items-habilidad {
@@ -1314,40 +1276,7 @@ section.hidden {
     gap: 0.8rem;
 }
 
-.toggle-view-btn {
-    background: rgba(100, 255, 218, 0.1);
-    color: #64ffda;
-    border: 1px solid #64ffda;
-    padding: 0.6rem 1.2rem;
-    margin-bottom: 2rem;
-    border-radius: 20px;
-    cursor: pointer;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
 
-.toggle-view-btn:hover {
-    background: rgba(100, 255, 218, 0.2);
-    transform: translateY(-2px);
-
-        background-color: #64ffda;
-        color: #0a192f;
-}
-
-/* ===== MEDIA QUERIES ===== */
-@media (max-width: 992px) {
-    .skills-carousel {
-        gap: 0.8rem;
-        animation-duration: 25s;
-    }
-    
-    .skill-item {
-        padding: 0.6rem 1rem;
-    }
-}
 
 @media (max-width: 768px) {
     #sobre-mi {
@@ -1368,15 +1297,31 @@ section.hidden {
         padding: 0.5rem 0.8rem;
         font-size: 0.85rem;
     }
+
+    .detailed-view .habilidades-tecnicas {
+        padding: 0;
+    }
+    
+    .detailed-view .items-habilidad {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 480px) {
     #sobre-mi h2 {
-        font-size: 2rem;
+        font-size: var(--mobile-title);
     }
     
     .descripcion-sobre-mi p {
-        font-size: 1rem;
+        font-size: var(--mobile-text);
+    }
+
+    .toggle-view-btn {
+        font-size: var(--mobile-text);
+    }
+
+    .toggle-view-btn .btn-text {
+        display: none;
     }
     
     .skills-carousel {
@@ -1385,14 +1330,14 @@ section.hidden {
     
     .skill-item {
         padding: 0.4rem 0.7rem;
-        font-size: 0.8rem;
+        font-size: var(--mobile-text);
     }
-    
-    .toggle-view-btn .btn-text {
-        display: none;
+
+    .detailed-view .categoria-habilidad h4 {
+        font-size: var(--mobile-text);
     }
 }
-
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
 
