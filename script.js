@@ -284,10 +284,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateButtonText() {
         const isDetailedView = detailedView.classList.contains('active-view');
         const icon = isDetailedView ? 'fa-list' : 'fa-eye';
-        const text = isDetailedView ? 'View Carousel' : 'View Detailed';
         
         toggleBtn.innerHTML = `<i class="fas ${icon}"></i> ` + 
-            (window.innerWidth < 10 ? `<span class="btn-text">${text}</span>` : '');
+            (window.innerWidth < 10 ? `<span class="btn-text"></span>` : '');
     }
 
     toggleBtn.addEventListener('click', function() {
