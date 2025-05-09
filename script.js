@@ -17,6 +17,11 @@ document.querySelectorAll("#nav-links li a").forEach(link => {
         setTimeout(() => navLinks.classList.remove("active"), 400);
     });
 });
+// Cerrar el menú cuando se hace clic en el logo
+document.getElementById("navIcon").addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+        setTimeout(() => navLinks.classList.remove("active"), 400);
+});
 
 
 // Navegación suave mejorada

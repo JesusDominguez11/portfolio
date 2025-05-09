@@ -30,10 +30,10 @@ const trackingConfig = {
       
       if(response.ok) {
         trackingConfig.trackedEvents.push(eventName);
-        console.log(`Evento ${eventName} registrado`);
+        // console.log(`Evento ${eventName} registrado`);
       }
     } catch (error) {
-      console.error(`Error registrando ${eventName}:`, error);
+      // console.error(`Error registrando ${eventName}:`, error);
     }
   };
   
