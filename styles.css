@@ -24,6 +24,14 @@
     --mobile-subtext:0.8rem;
 }
 
+[data-i18n] {
+    transition: opacity 0.3s ease;
+}
+
+.changing-language {
+    opacity: 0.5;
+}
+
 html {
     scroll-behavior: smooth; 
 }
