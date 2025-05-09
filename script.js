@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const text = isDetailedView ? 'View Carousel' : 'View Detailed';
         
         toggleBtn.innerHTML = `<i class="fas ${icon}"></i> ` + 
-            (window.innerWidth > 480 ? `<span class="btn-text">${text}</span>` : '');
+            (window.innerWidth < 10 ? `<span class="btn-text">${text}</span>` : '');
     }
 
     toggleBtn.addEventListener('click', function() {
