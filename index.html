@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
-
+<body class="changing-language">
+    <div class="main-content">
 
 
 
@@ -23,17 +23,19 @@
     <nav>
         <div class="nav-container">
             <div class="nav-left">
+
                 <div class="menu-toggle" id="menu-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <!-- Aquí agregamos el contenedor del icono -->
+
                 <div class="nav-icon">
                     <a href="#inicio">
                         <img src="./src/img/brand/brand.png" alt="Icono" class="icon-img">
                     </a>
                 </div>
+
             </div>
 
             <div class="nav-right">
@@ -538,7 +540,7 @@
                         <input type="text" id="nombre" name="nombre" placeholder="Name" required>
                     </div>
                     <div class="grupo-formulario">
-                        <input type="email" id="email" name="email" placeholder="Email" required>
+                        <input type="email" id="email" name="email" placeholder="Email" autocomplete="on" required >
                     </div>
                     <div class="grupo-formulario">
                         <textarea id="mensaje" name="mensaje" placeholder="Message" rows="5" required></textarea>
@@ -582,13 +584,19 @@
         </div>
 
     </footer>
+
+    <div class="language-loading-overlay hidden" id="languageLoader">
+    <div class="loading-spinner"></div>
+    <div class="loading-text" data-i18n="loading-text"></div>
+</div>
+
     <script src="script.js"></script>
     <script src="tracking.js"></script>
     <script src="js/config.js"></script>
     <script src="js/lang/languageManager.js"></script>
     <script src="js/lang/en.js"></script>
     <script src="js/lang/es.js"></script>
-    <!-- <script src="js/lang/translations.js"></script> -->
+    </div>
 </body>
 
 </html>
