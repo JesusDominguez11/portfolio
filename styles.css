@@ -76,6 +76,17 @@ a, button, .proyecto, img, .tarjeta-experiencia, .boton-llamada {
     }
 }
 
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
@@ -1386,9 +1397,9 @@ section.hidden {
 
 
 
-/* Estilos para la sección de contacto */
+/* ESTILOS PARA LA SECCION DE CONTACTO */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 #contacto {
-    /* background-color: #112240; */
     background-color: #0f172a;
     padding: 0rem 2rem;
     min-height: 100vh;
@@ -1399,16 +1410,16 @@ section.hidden {
 }
 
 #contacto h2 {
-    font-size: 2.5rem;
+    font-size: var(--desktop-title);
     color: #64ffda;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
     text-align: center;
     transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 1s ease-in-out;
 }
 
 .descripcion-contacto {
-    font-size: 1.1rem;
+    font-size: var(--desktop-text);
     color: #8892b0;
     text-align: justify;
     max-width: 600px;
@@ -1441,7 +1452,7 @@ input, textarea {
     border-radius: 4px;
     background-color: transparent;
     color: #ccd6f6;
-    font-size: 1rem;
+    font-size: var(--desktop-subtext);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1456,19 +1467,18 @@ textarea {
     min-height: 150px;
 }
 
-
 .boton-enviar {
-    /* display: inline-block; */
-    padding: 0.75rem 1.5rem;
-    width:fit-content;
-    align-self: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
     background-color: transparent;
     border: 1px solid #64ffda;
-    border-radius: 4px;
+    border-radius: 20px;
     color: #64ffda;
     text-decoration: none;
-    font-size: 1rem;
     font-weight: 500;
+    font-size: var(--desktop-text);
     transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 2.5s ease-in-out;
 }
@@ -1483,25 +1493,31 @@ textarea {
     color: #64ffda;
     text-align: center;
     margin-top: 1rem;
-    display: none; /* Oculto por defecto */
-}
-
-/* Animación para el mensaje de éxito */
-@keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    display: none;
 }
 
 .mensaje-exito.mostrar {
     display: block;
     animation: aparecer 0.5s ease-in-out;
 }
+
+@media (max-width: 768px) {
+    #contacto h2 {
+        font-size: var(--mobile-title);
+    }
+
+    .descripcion-contacto {
+        font-size: var(--mobile-text);
+    }
+
+    input, textarea {
+        font-size: var(--mobile-subtext);
+    }
+
+    .boton-enviar {
+        font-size: var(--mobile-text);
+    }
+}
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
@@ -1539,9 +1555,8 @@ textarea {
 
 
 
-
+/* ESTILOS PARA LA SECCION DE CONTACTO */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-/* Estilos para el footer */
 footer {
     background-color: #020c1b;
     color: #ccd6f6;
@@ -1608,7 +1623,6 @@ footer a:hover {
     color: #8892b0;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .contenido-footer {
         flex-direction: column;
@@ -1665,7 +1679,6 @@ footer a:hover {
 
 
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-
 .cursor-follower {
     width: 400px;
     height: 400px;
