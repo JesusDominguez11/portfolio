@@ -29,7 +29,7 @@
 }
 
 .changing-language {
-    opacity: 0.5;
+    opacity: 0.1;
 }
 
 html {
@@ -295,6 +295,80 @@ nav.hide {
     }
 }
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+/* --- Selector de idioma --- */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+.language-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-texto);
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.language-btn:hover {
+    background: rgba(100, 255, 218, 0.1);
+    color: var(--color-destacado);
+}
+
+.language-btn::after {
+    content: '▼';
+    font-size: 0.6rem;
+    margin-left: 0.3rem;
+}
+
+.language-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--color-fondo);
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    display: none;
+    min-width: 100px;
+    z-index: 1001;
+}
+
+.language-switcher:hover .language-options {
+    display: block;
+}
+
+.language-option {
+    padding: 0.5rem 1rem;
+    color: var(--color-texto);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-option:hover {
+    background: rgba(100, 255, 218, 0.2);
+    color: var(--color-destacado);
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .language-switcher {
+        margin-left: 1rem;
+        order: 2; /* Coloca el selector después del icono */
+    }
+    
+    .language-options {
+        right: auto;
+        left: 0;
+    }
+}
 
 
 

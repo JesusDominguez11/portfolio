@@ -70,6 +70,13 @@ function applyTranslations() {
         }
     });
 
+    // Actualizar botón de idioma
+    const langBtn = document.querySelector('.language-btn');
+    if (langBtn) {
+        langBtn.textContent = currentLang.toUpperCase();
+        langBtn.setAttribute('data-i18n', 'current-language');
+    }
+
     setTimeout(() => {
         document.body.classList.remove('changing-language');
     }, 300);
@@ -89,6 +96,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadLanguage(lang);
     setLanguage(lang);
 });
+
 
 // window.toggleLanguage = function() {
 //     setLanguage(currentLang === 'es' ? 'en' : 'es');
