@@ -1,71 +1,116 @@
-// Cargar configuración
-// const DEFAULT_LANGUAGE = 'en';
-// const SUPPORTED_LANGUAGES = ['en', 'es'];
+// ================= CONFIGURACIÓN =================
+const DEFAULT_LANGUAGE = 'en';
+const SUPPORTED_LANGUAGES = ['en', 'es'];
+const MIN_LOADING_TIME = 500; // Tiempo mínimo de visualización del loader (ms)
 
+// ================= VARIABLES GLOBALES =================
 let currentLang = DEFAULT_LANGUAGE;
+let translations = {};
 
-// Función para cargar traducciones dinámicamente
-function loadLanguage(lang) {
-    return new Promise((resolve) => {
-        if (window.translations && window.translations[lang]) {
-            resolve();
-            return;
+// ================= FUNCIONES CORE =================
+
+/**
+ * Inicializa el sistema de idiomas
+ */
+async function initLanguageSystem() {
+    showLoadingOverlay();
+    
+    const lang = determinePreferredLanguage();
+
+    await setLanguage(lang);
+
+    hideLoadingOverlay();
+}
+
+/**
+ * Determina el idioma preferido basado en URL, localStorage y navegador
+ */
+function determinePreferredLanguage() {
+    const urlLang = getUrlParam('lang');
+    const savedLang = localStorage.getItem('userLanguage');
+    const browserLang = navigator.language.slice(0, 2);
+
+    return SUPPORTED_LANGUAGES.includes(urlLang) ? urlLang :
+           SUPPORTED_LANGUAGES.includes(savedLang) ? savedLang :
+           SUPPORTED_LANGUAGES.includes(browserLang) ? browserLang : 
+           DEFAULT_LANGUAGE;
+}
+
+/**
+ * Cambia al idioma especificado
+ */
+async function setLanguage(lang) {
+    if (!SUPPORTED_LANGUAGES.includes(lang) || currentLang === lang) return;
+
+    try {
+        showLoadingOverlay();
+
+        // Cargar traducciones si no están en memoria
+        if (!translations[lang]) {
+            await loadTranslations(lang);
         }
+        
+        // Aplicar traducciones con tiempo mínimo de carga
+        await Promise.all([
+            applyTranslations(lang),
+            new Promise(resolve => setTimeout(resolve, MIN_LOADING_TIME))
+        ]);
+        
+        // Actualizar estado
+        currentLang = lang;
+        persistLanguagePreference(lang);
 
+    } catch (error) {
+        console.error('Error changing language:', error);
+        throw error;
+    } finally {
+        hideLoadingOverlay();
+    }
+}
+
+/**
+ * Alterna entre los idiomas disponibles
+ */
+function toggleLanguage() {
+    const nextLang = currentLang === 'es' ? 'en' : 'es';
+    setLanguage(nextLang);
+}
+
+// ================= FUNCIONES DE APOYO =================
+
+async function loadTranslations(lang) {
+    return new Promise((resolve, reject) => {
         const script = document.createElement('script');
         script.src = `js/lang/${lang}.js`;
-        script.onload = resolve;
+        script.onload = () => {
+            if (window.translations && window.translations[lang]) {
+                translations[lang] = window.translations[lang];
+                resolve();
+            } else {
+                reject(new Error(`Translation file for ${lang} did not load correctly`));
+            }
+        };
+        script.onerror = reject;
         document.head.appendChild(script);
     });
 }
 
-// Función para extraer parámetros de la URL
-function getUrlParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
-
-// Función para cambiar la URL (sin recargar la página)
-function updateUrlLangParam(lang) {
-    const url = new URL(window.location);
-    url.searchParams.set('lang', lang);
-    window.history.pushState({}, '', url);
-}
-
-function setLanguage(lang) {
-    if (!translations[lang]) return;
-    
-    currentLang = lang;
-    applyTranslations();
-    localStorage.setItem('userLanguage', lang);
-    updateUrlLangParam(lang); // Actualiza parámetro en URL
-}
-
-function toggleLanguage() {
-    setLanguage(currentLang === 'es' ? 'en' : 'es');
-}
-
-function applyTranslations() {
-    document.body.classList.add('changing-language');
-
-    // Elementos de texto normal
-    const textElements = document.querySelectorAll('[data-i18n]');
-    textElements.forEach(element => {
-        const key = element.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-            element.textContent = translations[currentLang][key];
+function applyTranslations(lang) {
+    // Traducir textos
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang]?.[key]) {
+            el.textContent = translations[lang][key];
         }
     });
 
-    // Atributos ALT
-    const altElements = document.querySelectorAll('[data-i18n-alt]');
-    altElements.forEach(element => {
-        const key = element.getAttribute('data-i18n-alt');
-        if (translations[currentLang][key]) {
-            element.setAttribute('alt', translations[currentLang][key]);
-            // Si es un enlace, actualizamos también aria-label
-            if (element.parentElement.tagName === 'A') {
-                element.parentElement.setAttribute('aria-label', translations[currentLang][key]);
+    // Traducir atributos alt y aria-label
+    document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+        const key = el.getAttribute('data-i18n-alt');
+        if (translations[lang]?.[key]) {
+            el.setAttribute('alt', translations[lang][key]);
+            if (el.parentElement.tagName === 'A') {
+                el.parentElement.setAttribute('aria-label', translations[lang][key]);
             }
         }
     });
@@ -73,38 +118,50 @@ function applyTranslations() {
     // Actualizar botón de idioma
     const langBtn = document.querySelector('.language-btn');
     if (langBtn) {
-        langBtn.textContent = currentLang.toUpperCase();
-        langBtn.setAttribute('data-i18n', 'current-language');
+        langBtn.textContent = lang.toUpperCase();
     }
-
-    setTimeout(() => {
-        document.body.classList.remove('changing-language');
-    }, 300);
 }
 
-// Inicialización mejorada
-document.addEventListener('DOMContentLoaded', async () => {
-    const urlLang = getUrlParam('lang');
-    const savedLang = localStorage.getItem('userLanguage');
-    const browserLang = navigator.language.slice(0, 2);
-    
-    const lang = SUPPORTED_LANGUAGES.includes(urlLang) ? urlLang :
-                SUPPORTED_LANGUAGES.includes(savedLang) ? savedLang :
-                SUPPORTED_LANGUAGES.includes(browserLang) ? browserLang : 
-                DEFAULT_LANGUAGE;
+function persistLanguagePreference(lang) {
+    localStorage.setItem('userLanguage', lang);
+    updateUrlParam('lang', lang);
+}
 
-    await loadLanguage(lang);
-    setLanguage(lang);
-});
+// ================= FUNCIONES UTILITARIAS =================
 
+function getUrlParam(param) {
+    return new URLSearchParams(window.location.search).get(param);
+}
 
-// window.toggleLanguage = function() {
-//     setLanguage(currentLang === 'es' ? 'en' : 'es');
-// };
+function updateUrlParam(key, value) {
+    const url = new URL(window.location);
+    url.searchParams.set(key, value);
+    window.history.pushState({}, '', url);
+}
 
-// window.addEventListener('popstate', () => {
-//     const newLang = getLanguageFromUrl();
-//     if (newLang && translations[newLang]) {
-//         setLanguage(newLang);
-//     }
-// });
+function showLoadingOverlay() {
+    const loader = document.getElementById('languageLoader');
+    if (loader) {
+        loader.style.display = 'flex';
+        setTimeout(() => loader.classList.remove('hidden'), 1);
+    }
+    document.body.classList.add('changing-language');
+}
+
+function hideLoadingOverlay() {
+    const loader = document.getElementById('languageLoader');
+    if (loader) {
+        loader.classList.add('hidden');
+        setTimeout(() => {
+            loader.style.display = 'none';
+        }, 500); // Match CSS transition duration
+    }
+    document.body.classList.remove('changing-language');
+}
+
+// ================= INICIALIZACIÓN =================
+document.addEventListener('DOMContentLoaded', initLanguageSystem);
+
+// ================= EXPORTACIÓN PARA USO GLOBAL =================
+window.toggleLanguage = toggleLanguage;
+window.setLanguage = setLanguage;

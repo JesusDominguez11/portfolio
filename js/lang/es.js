@@ -1,4 +1,11 @@
-const es = {
+// Para compatibilidad con carga tradicional
+if (typeof window.translations === 'undefined') {
+    window.translations = {};
+}
+window.translations.es = es = {
+        'loading-text': 'Cargando',
+    'language-loading': 'Cargando idioma...',
+
     // Sección inicio
     'inicio-title': 'Hola, soy Jesús Domínguez',
     'inicio-subtitle': 'Desarrollador Full-Stack web y móvil',
@@ -9,8 +16,3 @@ const es = {
     // Añadir más traducciones aquí...
 };
 
-// Para compatibilidad con carga tradicional
-if (typeof window.translations === 'undefined') {
-    window.translations = {};
-}
-window.translations.es = es;

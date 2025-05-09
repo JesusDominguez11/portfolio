@@ -1,4 +1,11 @@
-const en = {
+// Para compatibilidad con carga tradicional (sin módulos)
+if (typeof window.translations === 'undefined') {
+    window.translations = {};
+}
+window.translations.en = en = {
+        'loading-text': 'Loading',
+    'language-loading': 'Loading language...',
+
     // Sección inicio
     'inicio-title': 'Hi, I am Jesus Dominguez',
     'inicio-subtitle': 'Full-Stack web and mobile developer',
@@ -8,9 +15,3 @@ const en = {
     'inicio-qr-alt': 'QR code for my CV'
     // Añadir más traducciones aquí...
 };
-
-// Para compatibilidad con carga tradicional (sin módulos)
-if (typeof window.translations === 'undefined') {
-    window.translations = {};
-}
-window.translations.en = en;
