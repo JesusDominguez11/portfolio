@@ -676,7 +676,8 @@ section.hidden {
 
 
 
-
+/* ESTILOS PARA LA SECCION DE EXPERIEMCIA */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 .experiencia {
     margin-top: 2rem;
 }
@@ -794,6 +795,7 @@ section.hidden {
         font-size: var(--mobile-subtext);
     }
 }
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 
 
 
@@ -843,15 +845,9 @@ section.hidden {
 
 
 
-#proyectos {
-    background-color: var(--color-fondo);
-}
 
-#contacto {
-    background-color: var(--color-secundario);
-}
-
-/* Estilos para la sección de proyectos */
+/* ESTILOS PARA LA SECCION DE PROYECTOS */
+/* --------------------------------------------------------------------------------------------------------------------------------- */
 #proyectos {
     background-color: #1d4753;
     padding: 4rem 2rem;
@@ -859,14 +855,6 @@ section.hidden {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#proyectos h2 {
-    font-size: 2.5rem;
-    color: #64ffda;
-    margin-bottom: 2rem;
-    text-align: center;
-    animation: aparecer 1s ease-in-out;
 }
 
 .proyecto {
@@ -891,15 +879,15 @@ section.hidden {
     flex: 1;
 }
 
-.texto-proyecto h3 {
-    font-size: 1.75rem;
+.texto-proyecto .titulo-proyecto {
+    font-size: var(--desktop-subtitle);
     color: #64ffda;
     margin-bottom: 1rem;
     animation: aparecer 2s ease-in-out;
 }
 
 .texto-proyecto p {
-    font-size: 1rem;
+    font-size: var(--desktop-text);
     justify-self: auto;
     color: #8892b0;
     line-height: 1.6;
@@ -908,7 +896,6 @@ section.hidden {
     text-align: justify;
 }
 
-/* Estilos para los íconos de tecnologías */
 .tecnologias {
     display: flex;
     gap: 1rem;
@@ -936,9 +923,8 @@ section.hidden {
     margin-top: 5px;
 }
 
-/* Botón de código (estilo original que ya tenías) */
 .boton-codigo {
-    display: inline-flex; /* Cambiado a flex para alinear icono + texto */
+    display: inline-flex; 
     align-items: center;
     gap: 5px;
     margin-top: 1rem;
@@ -949,6 +935,7 @@ section.hidden {
     color: #64ffda;
     text-decoration: none;
     font-weight: 500;
+    font-size: var(--desktop-subtext);
     transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 2.5s ease-in-out;
 }
@@ -958,18 +945,18 @@ section.hidden {
     color: #0a192f;
 }
 
-/* Nuevo botón "Visita el sitio web" (estilo coherente con tu tema) */
 .boton-visitar {
     display: inline-flex;
     align-items: center;
     gap: 5px;
     padding: 0.5rem 1rem;
     background-color: transparent;
-    border: 1px solid #64ffda; /* Color rosa/azul para contrastar */
+    border: 1px solid #64ffda; 
     border-radius: 4px;
     color: #64ffda;
     text-decoration: none;
     font-weight: 500;
+    font-size: var(--desktop-subtext);
     transition: background-color 0.3s ease, color 0.3s ease;
     animation: aparecer 2.5s ease-in-out;
 }
@@ -979,14 +966,11 @@ section.hidden {
     color: #0a192f;
 }
 
-
-
-/* Contenedor del carousel */
 .carousel {
     position: relative;
     overflow: hidden;
     max-width: 600px;
-    height: 500px; /* Agregar una altura fija */
+    height: 500px; 
     border-radius: 10px;
 }
 
@@ -994,7 +978,7 @@ section.hidden {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
-    height: 100%; /* Asegurar que las imágenes ocupen toda la altura */
+    height: 100%; 
 }
 
 .carousel img {
@@ -1014,6 +998,7 @@ section.hidden {
     padding: 10px;
     font-size: 18px;
     border-radius: 20%;
+    transition: background-color 0.5s ease;
 }
 
 .carousel-prev { left: 10px; }
@@ -1021,13 +1006,9 @@ section.hidden {
 
 .carousel-prev:hover, .carousel-next:hover {
     background: rgba(0, 0, 0, 0.8);
+    transition: background-color 1s ease;
 }
 
-
-
-
-
-/* Responsive */
 @media (max-width: 768px) {
     .contenido-proyecto {
         flex-direction: column;
@@ -1037,20 +1018,33 @@ section.hidden {
         flex-direction: column;
     }
 
+    .texto-proyecto .titulo-proyecto {
+        font-size: var(--mobile-subtitle);
+    }
+
+    .texto-proyecto p {
+        font-size: var(--mobile-text);
+    }
+
+    .boton-codigo {
+        font-size: var(--mobile-subtext);
+    }
+
+    .boton-visitar {
+        font-size: var(--mobile-subtext);
+    }
+
     .texto-proyecto, .imagen-proyecto {
         max-width: 100%;
     }
-}
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 768px) {
     .imagenes-proyecto {
-        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
-        align-items: center; /* Centra las imágenes */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .imagenes-proyecto img {
-        max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
+        max-width: 100%; 
     }
 }
 
@@ -1066,27 +1060,18 @@ section.hidden {
     .texto-proyecto, .imagen-proyecto {
         max-width: 100%;
     }
-}
 
-/* Estilos para pantallas pequeñas */
-@media (max-width: 1040px) {
     .imagenes-proyecto {
-        flex-direction: column; /* Apila las imágenes verticalmente en pantallas pequeñas */
-        align-items: center; /* Centra las imágenes */
+        flex-direction: column; 
+        align-items: center; 
     }
 
     .imagenes-proyecto img {
-        max-width: 100%; /* Las imágenes ocupan el ancho completo en pantallas pequeñas */
+        max-width: 100%;
     }
-}
 
-@media (max-width: 480px) {
     .carousel {
-        /* position: relative;
-        overflow: hidden;
-        max-width: 600px; */
-        height: auto; /* Agregar una altura fija */
-        /* border-radius: 10px; */
+        height: auto;
     }
 }
 
