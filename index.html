@@ -20,43 +20,41 @@
 
 
 
-    <nav>
-        <div class="nav-container">
-            <div class="nav-left">
-
-                <div class="menu-toggle" id="menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <nav>
+            <div class="nav-container">
+                <div class="nav-left">
+                    <div class="menu-toggle" id="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+        
+                    <div class="nav-icon">
+                        <a href="#inicio">
+                            <img src="./src/img/brand/brand.png" data-i18n-alt="nav-icon-alt" alt="Website icon" class="icon-img">
+                        </a>
+                    </div>
                 </div>
-
-                <div class="nav-icon">
-                    <a href="#inicio">
-                        <img src="./src/img/brand/brand.png" alt="Icono" class="icon-img">
-                    </a>
+        
+                <div class="nav-right">
+                    <ul class="nav-links" id="nav-links">
+                        <li><a href="#inicio" data-i18n="nav-home">Home</a></li>
+                        <li><a href="#experiencia" data-i18n="nav-experience">Experience</a></li>
+                        <li><a href="#proyectos" data-i18n="nav-projects">Projects</a></li>
+                        <li><a href="#sobre-mi" data-i18n="nav-about">About me</a></li>
+                        <li><a href="#contacto" data-i18n="nav-contact">Contact</a></li>
+                    </ul>
                 </div>
-
-            </div>
-
-            <div class="nav-right">
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#inicio">Home</a></li>
-                    <li><a href="#experiencia">Experience</a></li>
-                    <li><a href="#proyectos">Projects</a></li>
-                    <li><a href="#sobre-mi">About me</a></li>
-                    <li><a href="#contacto">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="language-switcher">
-                <button class="language-btn" data-i18n="current-language">EN</button>
-                <div class="language-options">
-                    <div class="language-option" onclick="setLanguage('en')">English</div>
-                    <div class="language-option" onclick="setLanguage('es')">Español</div>
+        
+                <div class="language-switcher">
+                    <button class="language-btn" data-i18n="current-language">EN</button>
+                    <div class="language-options">
+                        <div class="language-option" onclick="setLanguage('en')" >English</div>
+                        <div class="language-option" onclick="setLanguage('es')" >Español</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
 
 
@@ -111,72 +109,71 @@
     <section id="experiencia">
         <div class="contenido">
             <div class="contenido-experiencia">
-                <h2>Experience</h2>
+                <h2 data-i18n="experience-title">Experience</h2>
                 <div class="tarjetas-experiencia">
-
+    
                     <div class="tarjeta-experiencia">
-                        <h4 class="rol">Jr Full Stack Developer</h4>
-                        <p class="empresa">Victory Enterprises</p>
-                        <p class="fecha">June 2023 - January 2025</p>
+                        <h4 class="rol" data-i18n="experience-role1">Jr Full Stack Developer</h4>
+                        <p class="empresa" data-i18n="experience-company1">Victory Enterprises</p>
+                        <p class="fecha" data-i18n="experience-date1">June 2023 - January 2025</p>
                         <div class="descripcion">
-                            <p>Developed and maintained enterprise solutions for <strong>Victory Enterprises</strong>,
-                                <strong>CVS Pharmacy</strong> and <strong>Swiss Natural</strong>
-                                using <strong>ASP.NET Core</strong> for backend systems and <strong>React
-                                    Native/Angular</strong> for cross-platform applications, with <strong>SQL
+                            <p data-i18n="experience-desc1-1" data-i18n-html>Developed and maintained enterprise solutions for <strong data-i18n="experience-company1-strong">Victory Enterprises</strong>,
+                                <strong data-i18n="experience-company2-strong">CVS Pharmacy</strong> and <strong data-i18n="experience-company3-strong">Swiss Natural</strong>
+                                using <strong data-i18n="tech-aspnet-strong">ASP.NET Core</strong> for backend systems and <strong data-i18n="tech-reactnative-strong">React
+                                    Native/Angular</strong> for cross-platform applications, with <strong data-i18n="tech-sqlserver-strong">SQL
                                     Server</strong>
                                 as database management.</p>
-                            <p><strong>Key achievements:</strong></p>
+                            <p><strong data-i18n="experience-key-achievements">Key achievements:</strong></p>
                             <ul class="lista-experiencia">
-                                <li><strong>ERP System Optimization:</strong> Redesigned core modules improving
-                                    operational efficiency by 30% through workflow automation</li>
-                                <li><strong>Mobile Solutions:</strong> Built a kiosk-mode application for inventory
-                                    management and guard tracking system with offline capabilities</li>
-                                <li><strong>Data Security:</strong> Implemented automated encrypted backups to SFTP
-                                    servers for 100% database protection</li>
-                                <li><strong>User Support:</strong> Resolved 150+ technical tickets with 95% satisfaction
-                                    rate through custom script solutions</li>
+                                <li><strong data-i18n="experience-achievement1-1">ERP System Optimization:</strong> <span data-i18n="experience-achievement1-1-desc">Redesigned core modules improving
+                                    operational efficiency by 30% through workflow automation</span></li>
+                                <li><strong data-i18n="experience-achievement1-2">Mobile Solutions:</strong> <span data-i18n="experience-achievement1-2-desc">Built a kiosk-mode application for inventory
+                                    management and guard tracking system with offline capabilities</span></li>
+                                <li><strong data-i18n="experience-achievement1-3">Data Security:</strong> <span data-i18n="experience-achievement1-3-desc">Implemented automated encrypted backups to SFTP
+                                    servers for 100% database protection</span></li>
+                                <li><strong data-i18n="experience-achievement1-4">User Support:</strong> <span data-i18n="experience-achievement1-4-desc">Resolved 150+ technical tickets with 95% satisfaction
+                                    rate through custom script solutions</span></li>
                             </ul>
-                            <p class="focus-title"><strong>Technical Highlights:</strong></p>
+                            <p class="focus-title"><strong data-i18n="experience-tech-highlights">Technical Highlights:</strong></p>
                             <div class="focus-items">
-                                <span class="focus-item">✔ ASP.NET</span>
-                                <span class="focus-item">✔ React Native</span>
-                                <span class="focus-item">✔ Web APIs</span>
-                                <span class="focus-item">✔ JWT</span>
-                                <span class="focus-item">✔ SQL Server</span>
-                                <span class="focus-item">✔ Entity Framework</span>
+                                <span class="focus-item" data-i18n="tech-aspnet">✔ ASP.NET</span>
+                                <span class="focus-item" data-i18n="tech-reactnative">✔ React Native</span>
+                                <span class="focus-item" data-i18n="tech-webapis">✔ Web APIs</span>
+                                <span class="focus-item" data-i18n="tech-jwt">✔ JWT</span>
+                                <span class="focus-item" data-i18n="tech-sqlserver">✔ SQL Server</span>
+                                <span class="focus-item" data-i18n="tech-entityframework">✔ Entity Framework</span>
                             </div>
                         </div>
                     </div>
-
+    
                     <div class="tarjeta-experiencia">
-                        <h4 class="rol">Full Stack Developer (Freelance)</h4>
-                        <p class="empresa">Self-learning through production-ready projects</p>
-                        <p class="fecha">February 2025 - Present</p>
+                        <h4 class="rol" data-i18n="experience-role2">Full Stack Developer (Freelance)</h4>
+                        <p class="empresa" data-i18n="experience-company4">Self-learning through production-ready projects</p>
+                        <p class="fecha" data-i18n="experience-date2">February 2025 - Present</p>
                         <div class="descripcion">
-                            <p>Passionate about building complete solutions with <strong>Angular, React, Node.js, MySQL
-                                    and PostgreSQL</strong>, developing self-manageable websites and applications ready
+                            <p data-i18n="experience-desc2-1" data-i18n-html>Passionate about building complete solutions with <strong data-i18n="tech-angular-strong">Angular</strong>, <strong data-i18n="tech-react-strong">React</strong>, <strong data-i18n="tech-nodejs-strong">Node.js</strong>, <strong data-i18n="tech-mysql-strong">MySQL</strong>
+                                and <strong data-i18n="tech-postgresql-strong">PostgreSQL</strong>, developing self-manageable websites and applications ready
                                 for business implementation.</p>
-
-                            <p><strong>Key focus areas:</strong></p>
+    
+                            <p><strong data-i18n="experience-key-focus">Key focus areas:</strong></p>
                             <ul class="lista-experiencia">
-                                <li><strong>Auto-administerable systems</strong> with intuitive dashboards for
-                                    non-technical users</li>
-                                <li><strong>Deployment-ready projects</strong> following CI/CD best practices</li>
-                                <li><strong>API integration</strong> and <strong>database optimization</strong> for
-                                    scalable solutions</li>
-                                <li><strong>Modular architectures</strong> for easy maintenance and upgrades</li>
+                                <li><strong data-i18n="experience-focus2-1">Auto-administerable systems</strong> <span data-i18n="experience-focus2-1-desc">with intuitive dashboards for
+                                    non-technical users</span></li>
+                                <li><strong data-i18n="experience-focus2-2">Deployment-ready projects</strong> <span data-i18n="experience-focus2-2-desc">following CI/CD best practices</span></li>
+                                <li><strong data-i18n="experience-focus2-3" data-i18n-html>API integration</strong> <span data-i18n="experience-focus2-3-desc" data-i18n-html>and <strong data-i18n="experience-focus2-3-strong">database optimization</strong> for
+                                    scalable solutions</span></li>
+                                <li><strong data-i18n="experience-focus2-4">Modular architectures</strong> <span data-i18n="experience-focus2-4-desc">for easy maintenance and upgrades</span></li>
                             </ul>
-
-                            <p class="focus-title"><strong>Current focus:</strong> Creating portfolio projects with
-                                real-world applicability:</p>
+    
+                            <p class="focus-title"><strong data-i18n="experience-current-focus">Current focus:</strong> <span data-i18n="experience-current-focus-desc">Creating portfolio projects with
+                                real-world applicability:</span></p>
                             <div class="focus-items">
-                                <span class="focus-item">✔ CMS functionality</span>
-                                <span class="focus-item">✔ Role-based access</span>
-                                <span class="focus-item">✔ Responsive designs</span>
+                                <span class="focus-item" data-i18n="tech-cms">✔ CMS functionality</span>
+                                <span class="focus-item" data-i18n="tech-rbac">✔ Role-based access</span>
+                                <span class="focus-item" data-i18n="tech-responsive">✔ Responsive designs</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -193,12 +190,12 @@
 
     <section id="proyectos">
         <div class="contenido">
-            <h2>Projects</h2>
+            <h2 data-i18n="projects-title">Projects</h2>
             <div class="proyecto">
                 <div class="contenido-proyecto">
                     <div class="texto-proyecto">
-                        <h4 class="titulo-proyecto">3DVerse marketplace site</h3>
-                            <p>
+                        <h4 class="titulo-proyecto" data-i18n="project1-title">3DVerse marketplace site</h3>
+                            <p data-i18n="project1-description" data-i18n-html>
                                 A marketplace website for the sale of 3D printed figures. The site has an authentication
                                 system with login and registration, a shopping
                                 cart system, and a dashboard to self-manage the website. It has a system of
@@ -215,16 +212,15 @@
                                 <i class="fas fa-cloud-upload-alt" title="Render.com"></i>
                             </div>
 
-                            <!-- Contenedor para los botones de código (GitHub) -->
                             <div class="botones-codigo">
                                 <a href="https://github.com/JesusDominguez11/3DPrinting_Store" target="_blank"
                                     class="boton-codigo">
-                                    <i class="fab fa-github"></i> Source Code in GitHub
+                                    <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
                                 </a>
 
                                 <a href="https://github.com/JesusDominguez11/3dverse-api" target="_blank"
                                     class="boton-codigo">
-                                    <i class="fab fa-github"></i> API Source Code in GitHub
+                                    <i class="fab fa-github"></i> <span data-i18n="api-source-code">API Source Code in GitHub</span>
                                 </a>
                             </div>
 
@@ -232,7 +228,7 @@
                             <div class="botones-visitar-contenedor">
                                 <a href="https://threedprinting-store.onrender.com" target="_blank"
                                     class="boton-visitar">
-                                    <i class="fas fa-external-link-alt"></i> Visit the website
+                                    <i class="fas fa-external-link-alt"></i> <span data-i18n="visit-website">Visit the website</span>
                                 </a>
                             </div>
                     </div>
@@ -240,13 +236,13 @@
                     <div class="carousel">
                         <button class="carousel-prev">&#10094;</button>
                         <div class="carousel-inner">
-                            <img src="./src/img/proyects/p3/p3_123.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_234.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_345.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_456.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_567.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_678.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_789.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_123.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_234.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_345.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_456.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_567.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_678.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p3/p3_789.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
                         </div>
                         <button class="carousel-next">&#10095;</button>
                     </div>
@@ -256,41 +252,39 @@
             <div class="proyecto">
                 <div class="contenido-proyecto alternado">
                     <div class="texto-proyecto">
-                        <h4 class="titulo-proyecto">CVS Pharmacy Website</h3>
-                            <p>
-                                Website developed for Victory Enterprises' sister company specializing in pharmaceutical
-                                warehousing and distribution,
-                                featuring an inventory management system integration, interactive product catalog with
-                                dynamic filtering,
-                                and responsive design for all devices - including secure contact forms with Azure
-                                backend integration.
-                                Built with Angular (TypeScript) framework and SQL Server database architecture,
-                                the platform was deployed on Microsoft Azure cloud services with CI/CD pipeline
-                                implementation for automated deployments.
-                            </p>
-
-
-                            <div class="tecnologias">
-                                <i class="fab fa-angular" title="Angular"></i>
-                                <i class="fab fa-bootstrap" title="Bootstrap"></i>
-                                <i class="fas fa-database" title="SQL Server"></i>
-                                <i class="fab fa-microsoft" title="Azure Cloud"></i>
-                                <i class="fas fa-mobile-alt" title="Responsive Design"></i>
-                            </div>
-
-                            <!-- Botón "Visita el sitio web" (debajo de los botones de código) -->
-                            <div class="boton-visitar-contenedor">
-                                <a href="https://cvs-pharmacy.com.mx" target="_blank" class="boton-visitar">
-                                    <i class="fas fa-external-link-alt"></i> Visit the website
-                                </a>
-                            </div>
+                        <h4 class="titulo-proyecto" data-i18n="project2-title">CVS Pharmacy Website</h4>
+                        <p data-i18n="project2-description" data-i18n-html>
+                            Website developed for Victory Enterprises' sister company specializing in pharmaceutical
+                            warehousing and distribution,
+                            featuring an inventory management system integration, interactive product catalog with
+                            dynamic filtering,
+                            and responsive design for all devices - including secure contact forms with Azure
+                            backend integration.
+                            Built with Angular (TypeScript) framework and SQL Server database architecture,
+                            the platform was deployed on Microsoft Azure cloud services with CI/CD pipeline
+                            implementation for automated deployments.
+                        </p>
+            
+                        <div class="tecnologias">
+                            <i class="fab fa-angular" data-i18n-title="tech-angular" title="Angular"></i>
+                            <i class="fab fa-bootstrap" data-i18n-title="tech-bootstrap" title="Bootstrap"></i>
+                            <i class="fas fa-database" data-i18n-title="tech-sqlserver" title="SQL Server"></i>
+                            <i class="fab fa-microsoft" data-i18n-title="tech-azure" title="Azure Cloud"></i>
+                            <i class="fas fa-mobile-alt" data-i18n-title="tech-responsive" title="Responsive Design"></i>
+                        </div>
+            
+                        <div class="boton-visitar-contenedor">
+                            <a href="https://cvs-pharmacy.com.mx" target="_blank" class="boton-visitar">
+                                <i class="fas fa-external-link-alt"></i> <span data-i18n="visit-website">Visit the website</span>
+                            </a>
+                        </div>
                     </div>
-
+            
                     <div class="carousel">
                         <button class="carousel-prev">&#10094;</button>
                         <div class="carousel-inner">
-                            <img src="./src/img/proyects/p2.1/p2.1_123.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p2.1/p2.1_234.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p2.1/p2.1_123.png" data-i18n-alt="project2-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p2.1/p2.1_234.png" data-i18n-alt="project2-screenshot" alt="Application screenshot">
                         </div>
                         <button class="carousel-next">&#10095;</button>
                     </div>
@@ -298,75 +292,73 @@
             </div>
 
 
-            <!-- Proyecto 1 -->
+
             <div class="proyecto">
                 <div class="contenido-proyecto">
                     <div class="texto-proyecto">
-                        <h4 class="titulo-proyecto">Graphic visualizer</h3>
-                            <p>
-                                A mobile application for 3D graphics visualization, 2D graphics, animations, gesture
-                                handling, window navigation, audio and custom themes.
-                                Developed in React Native with Expo and deployed with Eas build.
-                            </p>
-                            <div class="tecnologias">
-                                <i class="fab fa-react" title="React"></i>
-                                <i class="fab fa-node-js" title="Node.js"></i>
-                                <i class="fab fa-js" title="JavaScript"></i>
-                                <i class="fab fa-css3-alt" title="CSS3"></i>
-                            </div>
-                            <a href="https://github.com/JesusDominguez11/SolarSystemAppV2" target="_blank"
-                                class="boton-codigo" data-project="SolarSystemAppV2" data-link-type="code">Source code
-                                in GitHub</a>
+                        <h4 class="titulo-proyecto" data-i18n="project3-title">Graphic visualizer</h4>
+                        <p data-i18n="project3-description" data-i18n-html>
+                            A mobile application for 3D graphics visualization, 2D graphics, animations, gesture
+                            handling, window navigation, audio and custom themes.
+                            Developed in <strong>React Native</strong> with <strong>Expo</strong> and deployed with <strong>Eas build</strong>.
+                        </p>
+                        <div class="tecnologias">
+                            <i class="fab fa-react" data-i18n-title="tech-react" title="React"></i>
+                            <i class="fab fa-node-js" data-i18n-title="tech-nodejs" title="Node.js"></i>
+                            <i class="fab fa-js" data-i18n-title="tech-javascript" title="JavaScript"></i>
+                            <i class="fab fa-css3-alt" data-i18n-title="tech-css" title="CSS3"></i>
+                        </div>
+                        <a href="https://github.com/JesusDominguez11/SolarSystemAppV2" target="_blank"
+                            class="boton-codigo" data-project="SolarSystemAppV2" data-link-type="code">
+                            <i class="fab fa-github"></i> <span data-i18n="source-code">Source code in GitHub</span>
+                        </a>
                     </div>
-                    <!-- <div class="imagenes-proyecto"> -->
                     <div class="carousel">
                         <button class="carousel-prev">&#10094;</button>
                         <div class="carousel-inner">
-                            <img src="./src/img/proyects/p1_123.jpeg" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p1_234.jpeg" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p1_345.jpeg" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p1_456.jpeg" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p1_123.jpeg" data-i18n-alt="project3-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p1_234.jpeg" data-i18n-alt="project3-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p1_345.jpeg" data-i18n-alt="project3-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p1_456.jpeg" data-i18n-alt="project3-screenshot" alt="Application screenshot">
                         </div>
                         <button class="carousel-next">&#10095;</button>
                     </div>
-                    <!-- </div> -->
                 </div>
             </div>
 
-            <!-- Proyecto 2 -->
             <div class="proyecto">
                 <div class="contenido-proyecto alternado">
                     <div class="texto-proyecto">
-                        <h4 class="titulo-proyecto">Desktop application for eyestrain</h3>
-                            <p>
-                                A desktop app that assesses user's visual fatigue levels with questionnaires and
-                                provides pinhole filtering functionality,
-                                blue light filter and screen dimmer to reduce visual fatigue. Developed with Windows
-                                Forms of .Net, MySql.
-                            </p>
-                            <div class="tecnologias">
-                                <i class="fab fa-windows" title="Windows Forms"></i>
-                                <i class="fab fa-csharp" title="C#"></i>
-                                <i class="fas fa-database" title="MySQL"></i>
-                                <i class="fas fa-laptop-code" title="Despliegue local"></i>
-                                <i class="fab fa-git" title="Git"></i>
-                            </div>
-                            <a href="https://github.com/JesusDominguez11/TherapEye_v2_stenopeic_filter_only.git"
-                                target="_blank" class="boton-codigo" data-project="TherapEyev2"
-                                data-link-type="code">Source code in GitHub</a>
+                        <h4 class="titulo-proyecto" data-i18n="project4-title">Desktop application for eyestrain</h4>
+                        <p data-i18n="project4-description" data-i18n-html>
+                            A desktop app that assesses user's visual fatigue levels with questionnaires and
+                            provides pinhole filtering functionality,
+                            blue light filter and screen dimmer to reduce visual fatigue. Developed with <strong>Windows
+                            Forms</strong> of <strong>.Net</strong>, <strong>MySql</strong>.
+                        </p>
+                        <div class="tecnologias">
+                            <i class="fab fa-windows" data-i18n-title="tech-windowsforms" title="Windows Forms"></i>
+                            <i class="fab fa-csharp" data-i18n-title="tech-csharp" title="C#"></i>
+                            <i class="fas fa-database" data-i18n-title="tech-mysql" title="MySQL"></i>
+                            <i class="fas fa-laptop-code" data-i18n-title="tech-localdeploy" title="Local Deployment"></i>
+                            <i class="fab fa-git" data-i18n-title="tech-git" title="Git"></i>
+                        </div>
+                        <a href="https://github.com/JesusDominguez11/TherapEye_v2_stenopeic_filter_only.git"
+                            target="_blank" class="boton-codigo" data-project="TherapEyev2"
+                            data-link-type="code">
+                            <i class="fab fa-github"></i> <span data-i18n="source-code">Source code in GitHub</span>
+                        </a>
                     </div>
-                    <!-- <div class="imagenes-proyecto"> -->
                     <div class="carousel">
                         <button class="carousel-prev">&#10094;</button>
                         <div class="carousel-inner">
-                            <img src="./src/img/proyects/p2_123.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p2_234.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p2_345.png" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p2_456.png" alt="Captura de la aplicación">
+                            <img src="./src/img/proyects/p2_123.png" data-i18n-alt="project4-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p2_234.png" data-i18n-alt="project4-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p2_345.png" data-i18n-alt="project4-screenshot" alt="Application screenshot">
+                            <img src="./src/img/proyects/p2_456.png" data-i18n-alt="project4-screenshot" alt="Application screenshot">
                         </div>
                         <button class="carousel-next">&#10095;</button>
                     </div>
-                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -384,9 +376,9 @@
     <section id="sobre-mi">
         <div class="contenido">
             <div class="contenido-sobre-mi">
-                <h2>About Me</h2>
+                <h2 data-i18n="about-title">About Me</h2>
                 <div class="descripcion-sobre-mi">
-                    <p class="intro">
+                    <p class="intro" data-i18n="about-description" data-i18n-html>
                         I'm a solutions-oriented <span class="highlight">Full Stack Developer</span> with expertise in
                         the JavaScript ecosystem (Angular, React, Node.js) and database management. My 2+ years of
                         experience include developing <span class="highlight">scalable architectures</span> for various
@@ -397,125 +389,125 @@
                             development</span> to deliver maintainable, user-focused solutions.
                     </p>
                 </div>
-
+    
                 <div class="habilidades-container">
-
+    
                     <div class="habilidades-header">
-                        <h2>Technical Skills</h2>
+                        <h2 data-i18n="skills-title">Technical Skills</h2>
                         <button id="toggle-view-btn" class="toggle-view-btn">
-                            <i class="fas fa-eye"></i> <span class="btn-text">View Detailed</span>
+                            <i class="fas fa-eye"></i> <span class="btn-text" data-i18n="view-details-btn">View Detailed</span>
                         </button>
                     </div>
-
+    
                     <div id="carousel-view" class="skills-view active-view">
                         <div class="skills-carousel-wrapper">
                             <div class="skills-carousel">
-                                <span class="skill-item"><i class="fab fa-windows"></i> IIS</span>
-                                <span class="skill-item"><i class="fas fa-feather-alt"></i> Apache</span>
-                                <span class="skill-item"><i class="fas fa-database"></i> MySQL</span>
-                                <span class="skill-item"><i class="fab fa-microsoft"></i> SQL Server</span>
-                                <span class="skill-item"><i class="fas fa-database"></i> PostgreSQL</span>
-                                <span class="skill-item"><i class="fas fa-leaf"></i> MongoDB</span>
-                                <span class="skill-item"><i class="fab fa-npm"></i> npm</span>
-                                <span class="skill-item"><i class="fab fa-yarn"></i> Yarn</span>
-                                <span class="skill-item"><i class="fas fa-cube"></i> NuGet</span>
-                                <span class="skill-item"><i class="fab fa-php"></i> Composer</span>
-                                <span class="skill-item"><i class="fab fa-python"></i> pip</span>
-                                <span class="skill-item"><i class="fab fa-react"></i> React</span>
-                                <span class="skill-item"><i class="fab fa-angular"></i> Angular</span>
-                                <span class="skill-item"><i class="fab fa-vuejs"></i> Vue.js</span>
-                                <span class="skill-item"><i class="fab fa-php"></i> Laravel</span>
-                                <span class="skill-item"><i class="fab fa-node-js"></i> Express</span>
-                                <span class="skill-item"><i class="fab fa-microsoft"></i> ASP.NET</span>
-                                <span class="skill-item"><i class="fab fa-react"></i> React Native</span>
-                                <span class="skill-item"><i class="fas fa-mobile"></i> Flutter</span>
-                                <span class="skill-item"><i class="fab fa-microsoft"></i> C#</span>
-                                <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
-                                <span class="skill-item"><i class="fas fa-code"></i> TypeScript</span>
-                                <span class="skill-item"><i class="fab fa-python"></i> Python</span>
-                                <span class="skill-item"><i class="fab fa-php"></i> PHP</span>
-                                <span class="skill-item"><i class="fas fa-project-diagram"></i> MVC</span>
-                                <span class="skill-item"><i class="fas fa-plug"></i> REST APIs</span>
+                                <span class="skill-item"><i class="fab fa-windows" data-i18n-title="tech-iis"></i> <span data-i18n="tech-iis">IIS</span></span>
+                                <span class="skill-item"><i class="fas fa-feather-alt" data-i18n-title="tech-apache"></i> <span data-i18n="tech-apache">Apache</span></span>
+                                <span class="skill-item"><i class="fas fa-database" data-i18n-title="tech-mysql"></i> <span data-i18n="tech-mysql">MySQL</span></span>
+                                <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-sqlserver"></i> <span data-i18n="tech-sqlserver">SQL Server</span></span>
+                                <span class="skill-item"><i class="fas fa-database" data-i18n-title="tech-postgresql"></i> <span data-i18n="tech-postgresql">PostgreSQL</span></span>
+                                <span class="skill-item"><i class="fas fa-leaf" data-i18n-title="tech-mongodb"></i> <span data-i18n="tech-mongodb">MongoDB</span></span>
+                                <span class="skill-item"><i class="fab fa-npm" data-i18n-title="tech-npm"></i> <span data-i18n="tech-npm">npm</span></span>
+                                <span class="skill-item"><i class="fab fa-yarn" data-i18n-title="tech-yarn"></i> <span data-i18n="tech-yarn">Yarn</span></span>
+                                <span class="skill-item"><i class="fas fa-cube" data-i18n-title="tech-nuget"></i> <span data-i18n="tech-nuget">NuGet</span></span>
+                                <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-composer"></i> <span data-i18n="tech-composer">Composer</span></span>
+                                <span class="skill-item"><i class="fab fa-python" data-i18n-title="tech-pip"></i> <span data-i18n="tech-pip">pip</span></span>
+                                <span class="skill-item"><i class="fab fa-react" data-i18n-title="tech-react"></i> <span data-i18n="tech-react">React</span></span>
+                                <span class="skill-item"><i class="fab fa-angular" data-i18n-title="tech-angular"></i> <span data-i18n="tech-angular">Angular</span></span>
+                                <span class="skill-item"><i class="fab fa-vuejs" data-i18n-title="tech-vuejs"></i> <span data-i18n="tech-vuejs">Vue.js</span></span>
+                                <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-laravel"></i> <span data-i18n="tech-laravel">Laravel</span></span>
+                                <span class="skill-item"><i class="fab fa-node-js" data-i18n-title="tech-express"></i> <span data-i18n="tech-express">Express</span></span>
+                                <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-aspnet"></i> <span data-i18n="tech-aspnet">ASP.NET</span></span>
+                                <span class="skill-item"><i class="fab fa-react" data-i18n-title="tech-reactnative"></i> <span data-i18n="tech-reactnative">React Native</span></span>
+                                <span class="skill-item"><i class="fas fa-mobile" data-i18n-title="tech-flutter"></i> <span data-i18n="tech-flutter">Flutter</span></span>
+                                <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-csharp"></i> <span data-i18n="tech-csharp">C#</span></span>
+                                <span class="skill-item"><i class="fab fa-js" data-i18n-title="tech-javascript"></i> <span data-i18n="tech-javascript">JavaScript</span></span>
+                                <span class="skill-item"><i class="fas fa-code" data-i18n-title="tech-typescript"></i> <span data-i18n="tech-typescript">TypeScript</span></span>
+                                <span class="skill-item"><i class="fab fa-python" data-i18n-title="tech-python"></i> <span data-i18n="tech-python">Python</span></span>
+                                <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-php"></i> <span data-i18n="tech-php">PHP</span></span>
+                                <span class="skill-item"><i class="fas fa-project-diagram" data-i18n-title="tech-mvc"></i> <span data-i18n="tech-mvc">MVC</span></span>
+                                <span class="skill-item"><i class="fas fa-plug" data-i18n-title="tech-restapi"></i> <span data-i18n="tech-restapi">REST APIs</span></span>
                             </div>
                         </div>
                     </div>
-
+    
                     <div id="detailed-view" class="skills-view detailed-view">
                         <div class="habilidades-tecnicas">
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-server"></i> Infrastructure & Servers</h3>
-                                    <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-windows"></i> IIS</span>
-                                        <span class="skill-item"><i class="fas fa-feather-alt"></i> Apache</span>
-                                    </div>
+                                <h4><i class="fas fa-server" data-i18n-title="category-infrastructure"></i> <span data-i18n="category-infrastructure">Infrastructure & Servers</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-windows" data-i18n-title="tech-iis"></i> <span data-i18n="tech-iis">IIS</span></span>
+                                    <span class="skill-item"><i class="fas fa-feather-alt" data-i18n-title="tech-apache"></i> <span data-i18n="tech-apache">Apache</span></span>
+                                </div>
                             </div>
-
+    
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-database"></i> Databases</h3>
-                                    <div class="subcategoria">
-                                        <div class="items-habilidad">
-                                            <span class="skill-item"><i class="fas fa-database"></i> MySQL</span>
-                                            <span class="skill-item"><i class="fab fa-microsoft"></i> SQL Server</span>
-                                            <span class="skill-item"><i class="fas fa-database"></i> PostgreSQL</span>
-                                            <span class="skill-item"><i class="fas fa-leaf"></i> MongoDB</span>
-                                        </div>
-                                    </div>
-                            </div>
-
-                            <div class="categoria-habilidad">
-                                <h4><i class="fas fa-box-open"></i> Package Managers</h3>
+                                <h4><i class="fas fa-database" data-i18n-title="category-databases"></i> <span data-i18n="category-databases">Databases</span></h4>
+                                <div class="subcategoria">
                                     <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-npm"></i> npm</span>
-                                        <span class="skill-item"><i class="fab fa-yarn"></i> Yarn</span>
-                                        <span class="skill-item"><i class="fas fa-cube"></i> NuGet</span>
-                                        <span class="skill-item"><i class="fab fa-php"></i> Composer</span>
-                                        <span class="skill-item"><i class="fab fa-python"></i> pip</span>
+                                        <span class="skill-item"><i class="fas fa-database" data-i18n-title="tech-mysql"></i> <span data-i18n="tech-mysql">MySQL</span></span>
+                                        <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-sqlserver"></i> <span data-i18n="tech-sqlserver">SQL Server</span></span>
+                                        <span class="skill-item"><i class="fas fa-database" data-i18n-title="tech-postgresql"></i> <span data-i18n="tech-postgresql">PostgreSQL</span></span>
+                                        <span class="skill-item"><i class="fas fa-leaf" data-i18n-title="tech-mongodb"></i> <span data-i18n="tech-mongodb">MongoDB</span></span>
                                     </div>
+                                </div>
                             </div>
-
+    
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-laptop-code"></i> Frontend Development</h3>
-                                    <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-react"></i> React</span>
-                                        <span class="skill-item"><i class="fab fa-angular"></i> Angular</span>
-                                        <span class="skill-item"><i class="fab fa-vuejs"></i> Vue.js</span>
-                                    </div>
+                                <h4><i class="fas fa-box-open" data-i18n-title="category-package-managers"></i> <span data-i18n="category-package-managers">Package Managers</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-npm" data-i18n-title="tech-npm"></i> <span data-i18n="tech-npm">npm</span></span>
+                                    <span class="skill-item"><i class="fab fa-yarn" data-i18n-title="tech-yarn"></i> <span data-i18n="tech-yarn">Yarn</span></span>
+                                    <span class="skill-item"><i class="fas fa-cube" data-i18n-title="tech-nuget"></i> <span data-i18n="tech-nuget">NuGet</span></span>
+                                    <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-composer"></i> <span data-i18n="tech-composer">Composer</span></span>
+                                    <span class="skill-item"><i class="fab fa-python" data-i18n-title="tech-pip"></i> <span data-i18n="tech-pip">pip</span></span>
+                                </div>
                             </div>
-
+    
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-code"></i> Backend Development</h3>
-                                    <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-php"></i> Laravel</span>
-                                        <span class="skill-item"><i class="fab fa-node-js"></i> Express</span>
-                                        <span class="skill-item"><i class="fab fa-microsoft"></i> ASP.NET</span>
-                                    </div>
+                                <h4><i class="fas fa-laptop-code" data-i18n-title="category-frontend"></i> <span data-i18n="category-frontend">Frontend Development</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-react" data-i18n-title="tech-react"></i> <span data-i18n="tech-react">React</span></span>
+                                    <span class="skill-item"><i class="fab fa-angular" data-i18n-title="tech-angular"></i> <span data-i18n="tech-angular">Angular</span></span>
+                                    <span class="skill-item"><i class="fab fa-vuejs" data-i18n-title="tech-vuejs"></i> <span data-i18n="tech-vuejs">Vue.js</span></span>
+                                </div>
                             </div>
-
+    
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
-                                    <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-react"></i> React Native</span>
-                                        <span class="skill-item"><i class="fas fa-mobile"></i> Flutter</span>
-                                    </div>
+                                <h4><i class="fas fa-code" data-i18n-title="category-backend"></i> <span data-i18n="category-backend">Backend Development</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-laravel"></i> <span data-i18n="tech-laravel">Laravel</span></span>
+                                    <span class="skill-item"><i class="fab fa-node-js" data-i18n-title="tech-express"></i> <span data-i18n="tech-express">Express</span></span>
+                                    <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-aspnet"></i> <span data-i18n="tech-aspnet">ASP.NET</span></span>
+                                </div>
                             </div>
-
+    
                             <div class="categoria-habilidad">
-                                <h4><i class="fas fa-file-code"></i> Languages & Paradigms</h3>
-                                    <div class="items-habilidad">
-                                        <span class="skill-item"><i class="fab fa-microsoft"></i> C#</span>
-                                        <span class="skill-item"><i class="fab fa-js"></i> JavaScript</span>
-                                        <span class="skill-item"><i class="fas fa-code"></i> TypeScript</span>
-                                        <span class="skill-item"><i class="fab fa-python"></i> Python</span>
-                                        <span class="skill-item"><i class="fab fa-php"></i> PHP</span>
-                                        <span class="skill-item"><i class="fas fa-project-diagram"></i> MVC</span>
-                                        <span class="skill-item"><i class="fas fa-plug"></i> REST APIs</span>
-                                    </div>
+                                <h4><i class="fas fa-mobile-alt" data-i18n-title="category-mobile"></i> <span data-i18n="category-mobile">Mobile Development</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-react" data-i18n-title="tech-reactnative"></i> <span data-i18n="tech-reactnative">React Native</span></span>
+                                    <span class="skill-item"><i class="fas fa-mobile" data-i18n-title="tech-flutter"></i> <span data-i18n="tech-flutter">Flutter</span></span>
+                                </div>
+                            </div>
+    
+                            <div class="categoria-habilidad">
+                                <h4><i class="fas fa-file-code" data-i18n-title="category-languages"></i> <span data-i18n="category-languages">Languages & Paradigms</span></h4>
+                                <div class="items-habilidad">
+                                    <span class="skill-item"><i class="fab fa-microsoft" data-i18n-title="tech-csharp"></i> <span data-i18n="tech-csharp">C#</span></span>
+                                    <span class="skill-item"><i class="fab fa-js" data-i18n-title="tech-javascript"></i> <span data-i18n="tech-javascript">JavaScript</span></span>
+                                    <span class="skill-item"><i class="fas fa-code" data-i18n-title="tech-typescript"></i> <span data-i18n="tech-typescript">TypeScript</span></span>
+                                    <span class="skill-item"><i class="fab fa-python" data-i18n-title="tech-python"></i> <span data-i18n="tech-python">Python</span></span>
+                                    <span class="skill-item"><i class="fab fa-php" data-i18n-title="tech-php"></i> <span data-i18n="tech-php">PHP</span></span>
+                                    <span class="skill-item"><i class="fas fa-project-diagram" data-i18n-title="tech-mvc"></i> <span data-i18n="tech-mvc">MVC</span></span>
+                                    <span class="skill-item"><i class="fas fa-plug" data-i18n-title="tech-restapi"></i> <span data-i18n="tech-restapi">REST APIs</span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
+        </div>
     </section>
 
 
@@ -529,60 +521,123 @@
 
     <section id="contacto">
         <div class="contenido">
-            <h2>Contact</h2>
+            <h2 data-i18n="contact-title">Contact</h2>
             <div class="contenido-contacto">
-                <p class="descripcion-contacto">
+                <p class="descripcion-contacto" data-i18n="contact-description">
                     If you have any questions or want to work with me, don't hesitate to contact me! I'll be happy to
-                    hear from you.
+                    hear you.
                 </p>
                 <form id="formulario-contacto">
                     <div class="grupo-formulario">
-                        <input type="text" id="nombre" name="nombre" placeholder="Name" required>
+                        <input type="text" id="nombre" name="nombre" data-i18n-placeholder="contact-name-placeholder" placeholder="Name" required>
                     </div>
                     <div class="grupo-formulario">
-                        <input type="email" id="email" name="email" placeholder="Email" autocomplete="on" required >
+                        <input type="email" id="email" name="email" data-i18n-placeholder="contact-email-placeholder" placeholder="Email" autocomplete="on" required>
                     </div>
                     <div class="grupo-formulario">
-                        <textarea id="mensaje" name="mensaje" placeholder="Message" rows="5" required></textarea>
+                        <textarea id="mensaje" name="mensaje" data-i18n-placeholder="contact-message-placeholder" placeholder="Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="boton-enviar">Send Message</button>
+                    <button type="submit" class="boton-enviar" data-i18n="contact-send-button">Send Message</button>
                 </form>
-                <p id="mensaje-exito" class="mensaje-exito">Your message has been sent.</p>
+                <p id="mensaje-exito" class="mensaje-exito" data-i18n="contact-success-message">Your message has been sent.</p>
             </div>
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="cursor-follower"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <footer data-section-name="footer">
         <div class="contenido-footer">
             <!-- Información de contacto -->
             <div class="info-contacto">
-                <h3>Contact</h3>
-                <p>If you have any questions or want to work with me, don't hesitate to contact me!</p>
+                <h3 data-i18n="footer-contact-title">Contact</h3>
+                <p data-i18n="footer-contact-description">If you have any questions or want to work with me, don't hesitate to contact me!</p>
                 <ul>
-                    <li><i class="fas fa-envelope"></i> <a
-                            href="mailto:romandominguezgarcia.01@gmail.com">romandominguezgarcia.01@gmail.com</a></li>
-                    <li><i class="fas fa-phone"></i> <a href="tel:+52 6644501383">+52 664 509 9491</a></li>
+                    <li><i class="fas fa-envelope" data-i18n-title="footer-email-icon"></i> <a
+                            href="mailto:romandominguezgarcia.01@gmail.com" data-i18n="footer-email-text">romandominguezgarcia.01@gmail.com</a></li>
+                    <li><i class="fas fa-phone" data-i18n-title="footer-phone-icon"></i> <a href="tel:+52 6645099491" data-i18n="footer-phone-text">+52 664 509 9491</a></li>
                 </ul>
             </div>
-
+    
             <div class="redes-sociales">
-                <h3>Sígueme</h3>
+                <h3 data-i18n="footer-follow-title">Follow me</h3>
                 <ul>
-                    <li><a href="https://github.com/JesusDominguez11" target="_blank"><i class="fab fa-github"></i>
-                            GitHub</a></li>
+                    <li><a href="https://github.com/JesusDominguez11" target="_blank"><i class="fab fa-github" data-i18n-title="footer-github-icon"></i>
+                            <span data-i18n="footer-github-text">GitHub</span></a></li>
                     <li><a href="https://www.linkedin.com/in/jesus-garcia-3a8b3a333" target="_blank"
-                            data-social-network="linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                            data-social-network="linkedin"><i class="fab fa-linkedin" data-i18n-title="footer-linkedin-icon"></i> <span data-i18n="footer-linkedin-text">LinkedIn</span></a></li>
                 </ul>
             </div>
-
+    
             <div class="derechos-autor">
-                <p>&copy; 2025 Jesus Dominguez. All rights reserved.</p>
+                <p data-i18n="footer-copyright">&copy; 2025 Jesus Dominguez. All rights reserved.</p>
             </div>
         </div>
-
     </footer>
 
     <div class="language-loading-overlay hidden" id="languageLoader">
