@@ -3,10 +3,10 @@ document.getElementById("menu-toggle").addEventListener("click", function() {
 
     if (navLinks.classList.contains("active")) {
 
-        setTimeout(() => navLinks.classList.remove("active"), 400); // Espera a que termine la animación
+        setTimeout(() => navLinks.classList.remove("active"), 600); // Espera a que termine la animación
     } else {
         navLinks.classList.add("active");
-        navLinks.style.maxHeight = "300px"; // Ajusta según el contenido
+        // navLinks.style.maxHeight = "300px"; // Ajusta según el contenido
     }
 });
 
