@@ -23,6 +23,11 @@ window.translations.en = en = {
     'inicio-button': 'See my projects',
     'inicio-img-alt': 'Profile photo of Jesus Dominguez',
     'inicio-qr-alt': 'QR code for my CV',
+
+    // ... qr ...
+    qr_alt_text: "Scan to download my CV",
+    cv_url: "https://qr.me-qr.com/mobile/pdf/830d7385-db3e-4d7f-abaa-1c23a8ea2c85",
+
     
     // seccion experiencia
     'experience-title': 'Experience',

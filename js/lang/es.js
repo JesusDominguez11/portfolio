@@ -22,6 +22,9 @@ window.translations.es = es = {
     'inicio-button': 'Ver mis proyectos',
     'inicio-img-alt': 'Foto de perfil de Jesús Domínguez',
     'inicio-qr-alt': 'Código QR para mi CV',
+        // ... qr ...
+    qr_alt_text: "Escanear para descargar mi CV",
+    cv_url: "https://qr.me-qr.com/mobile/pdf/9cf69296-41a9-49de-a1aa-0fe2161904f2",
 
     // Seccion experiencia
     'experience-title': 'Experiencia',

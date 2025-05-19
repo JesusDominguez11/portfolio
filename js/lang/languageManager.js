@@ -16,6 +16,8 @@ async function initLanguageSystem() {
     showLoadingOverlay();
     
     const lang = determinePreferredLanguage();
+        // Actualizar QR y enlace de CV
+    updateQrAndLink(lang);
 
     await setLanguage(lang);
 
@@ -126,6 +128,9 @@ function applyTranslations(lang) {
     if (translations[lang]?.[key]) {
         el.setAttribute('title', translations[lang][key]);
     }
+
+    //actualizar qr
+    updateQrAndLink(lang);
 });
 
 // Traducir placeholders
@@ -186,3 +191,54 @@ document.addEventListener('DOMContentLoaded', initLanguageSystem);
 // ================= EXPORTACIÓN PARA USO GLOBAL =================
 window.toggleLanguage = toggleLanguage;
 window.setLanguage = setLanguage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function updateQrAndLink(lang) {
+  const qrImg = document.getElementById('dynamicQr');
+  const cvLink = document.getElementById('cvDownloadLink');
+  
+  // Validación básica del idioma
+  if (!['en', 'es'].includes(lang)) {
+    lang = 'en'; // Idioma por defecto
+  }
+
+  // Configuración para cada idioma
+  const config = {
+    en: {
+      qrImage: './src/img/qr/qrcode_download_cv_en.png',
+      cvUrl: 'https://qr.me-qr.com/mobile/pdf/830d7385-db3e-4d7f-abaa-1c23a8ea2c85',
+      altText: 'Scan to download my CV'
+    },
+    es: {
+      qrImage: './src/img/qr/qrcode_download_cv_es.png',
+      cvUrl: 'https://qr.me-qr.com/mobile/pdf/9cf69296-41a9-49de-a1aa-0fe2161904f2',
+      altText: 'Escanea para descargar mi CV'
+    }
+  };
+
+  // Aplicar configuración
+  qrImg.src = config[lang].qrImage;
+  cvLink.href = config[lang].cvUrl;
+  qrImg.alt = config[lang].altText;
+
+}
