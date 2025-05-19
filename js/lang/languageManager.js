@@ -225,12 +225,12 @@ function updateQrAndLink(lang) {
   // Configuración para cada idioma
   const config = {
     en: {
-      qrImage: './src/img/qr/qrcode_download_cv_en.png',
+      qrImage: './src/img/qr/qrcode_download_cv_EN.png',
       cvUrl: 'https://qr.me-qr.com/mobile/pdf/830d7385-db3e-4d7f-abaa-1c23a8ea2c85',
       altText: 'Scan to download my CV'
     },
     es: {
-      qrImage: './src/img/qr/qrcode_download_cv_es.png',
+      qrImage: './src/img/qr/qrcode_download_cv_ES.png',
       cvUrl: 'https://qr.me-qr.com/mobile/pdf/9cf69296-41a9-49de-a1aa-0fe2161904f2',
       altText: 'Escanea para descargar mi CV'
     }
