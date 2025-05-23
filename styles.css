@@ -1204,7 +1204,6 @@ section.hidden {
 
 
 /* ESTILOS DE LA MODAL */
-/* Estilos para el header de proyectos */
 .proyecto.en-curso {
     border: 1px solid rgba(100, 255, 218, 0.5);
     background: rgba(6, 15, 27, 0.8);

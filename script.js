@@ -345,12 +345,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const spanCerrar = document.querySelector('.cerrar-modal');
     const carouselInner = document.querySelector('.modal-carousel-inner');
     const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
-    const btnPrev = document.querySelector('.modal-carousel-prev');
-    const btnNext = document.querySelector('.modal-carousel-next');
+   
+
+    // Variable para guardar el índice actual
+    let currentSlide = 0;
 
     // Mostrar modal con animación
     btnVerProyectos.addEventListener('click', function() {
+        // Resetear posición al abrir
+        carouselInner.scrollLeft = 0;
+        currentSlide = 0;
+        
+        // Limpiar y clonar proyectos
         carouselInner.innerHTML = '';
+        const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
         
         proyectosEnCurso.forEach(proyecto => {
             const proyectoClone = proyecto.cloneNode(true);
@@ -358,12 +366,17 @@ document.addEventListener('DOMContentLoaded', function() {
             carouselInner.appendChild(proyectoClone);
         });
         
-        // Mostrar el modal con animación
+        // Mostrar modal
         modal.style.display = 'block';
         modal.classList.add('fade-in');
         setTimeout(() => {
             modal.classList.add('show');
-        }, 10); // Pequeño retraso para permitir que el display:block se aplique primero
+        }, 10);
+        
+        // Forzar redibujado del carrusel
+        setTimeout(() => {
+            carouselInner.scrollLeft = 0;
+        }, 50);
     });
     
     // Cerrar modal con animación
@@ -385,20 +398,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Navegación del carrusel
+// Navegación del carrusel mejorada
+    const btnPrev = document.querySelector('.modal-carousel-prev');
+    const btnNext = document.querySelector('.modal-carousel-next');
+    
     btnPrev.addEventListener('click', function() {
+        const itemWidth = carouselInner.querySelector('.proyecto').offsetWidth + 20; // + gap
         carouselInner.scrollBy({
-            left: -carouselInner.offsetWidth,
+            left: -itemWidth,
             behavior: 'smooth'
         });
+        currentSlide = Math.max(0, currentSlide - 1);
     });
     
     btnNext.addEventListener('click', function() {
+        const itemWidth = carouselInner.querySelector('.proyecto').offsetWidth + 20; // + gap
         carouselInner.scrollBy({
-            left: carouselInner.offsetWidth,
+            left: itemWidth,
             behavior: 'smooth'
         });
+        currentSlide = Math.min(carouselInner.children.length - 1, currentSlide + 1);
     });
+
+        // Asegurar centrado después de scroll
+    carouselInner.addEventListener('scroll', function() {
+        const itemWidth = this.querySelector('.proyecto').offsetWidth + 20;
+        currentSlide = Math.round(this.scrollLeft / itemWidth);
+    });
+    
+    // Cerrar modal (mantén tu función existente)
+    function cerrarModal() {
+        modal.classList.remove('show');
+        modal.classList.add('fade-out');
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            modal.classList.remove('fade-in', 'fade-out');
+        }, 300);
+    }
 });
 
 
