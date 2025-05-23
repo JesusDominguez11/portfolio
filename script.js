@@ -340,44 +340,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // js para la modal
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementos del modal
     const modal = document.getElementById('proyectosCursoModal');
     const btnVerProyectos = document.getElementById('verProyectosCurso');
     const spanCerrar = document.querySelector('.cerrar-modal');
     const carouselInner = document.querySelector('.modal-carousel-inner');
-    
-    // Proyectos en curso
     const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
-    
-    // Botones del carrusel
     const btnPrev = document.querySelector('.modal-carousel-prev');
     const btnNext = document.querySelector('.modal-carousel-next');
-    
-    // Mostrar modal al hacer clic en el botón
+
+    // Mostrar modal con animación
     btnVerProyectos.addEventListener('click', function() {
-        // Limpiar el carrusel
         carouselInner.innerHTML = '';
         
-        // Agregar cada proyecto al carrusel
         proyectosEnCurso.forEach(proyecto => {
             const proyectoClone = proyecto.cloneNode(true);
             proyectoClone.style.display = 'block';
             carouselInner.appendChild(proyectoClone);
         });
         
-        // Mostrar el modal
+        // Mostrar el modal con animación
         modal.style.display = 'block';
+        modal.classList.add('fade-in');
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10); // Pequeño retraso para permitir que el display:block se aplique primero
     });
     
-    // Cerrar modal al hacer clic en la X
-    spanCerrar.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
+    // Cerrar modal con animación
+    function cerrarModal() {
+        modal.classList.remove('show');
+        modal.classList.add('fade-out');
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            modal.classList.remove('fade-in', 'fade-out');
+        }, 300); // Coincide con la duración de la animación
+    }
     
-    // Cerrar modal al hacer clic fuera del contenido
+    spanCerrar.addEventListener('click', cerrarModal);
+    
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
-            modal.style.display = 'none';
+            cerrarModal();
         }
     });
     
