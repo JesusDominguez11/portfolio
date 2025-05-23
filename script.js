@@ -319,3 +319,93 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// js para la modal
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del modal
+    const modal = document.getElementById('proyectosCursoModal');
+    const btnVerProyectos = document.getElementById('verProyectosCurso');
+    const spanCerrar = document.querySelector('.cerrar-modal');
+    const carouselInner = document.querySelector('.modal-carousel-inner');
+    
+    // Proyectos en curso
+    const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
+    
+    // Botones del carrusel
+    const btnPrev = document.querySelector('.modal-carousel-prev');
+    const btnNext = document.querySelector('.modal-carousel-next');
+    
+    // Mostrar modal al hacer clic en el botón
+    btnVerProyectos.addEventListener('click', function() {
+        // Limpiar el carrusel
+        carouselInner.innerHTML = '';
+        
+        // Agregar cada proyecto al carrusel
+        proyectosEnCurso.forEach(proyecto => {
+            const proyectoClone = proyecto.cloneNode(true);
+            proyectoClone.style.display = 'block';
+            carouselInner.appendChild(proyectoClone);
+        });
+        
+        // Mostrar el modal
+        modal.style.display = 'block';
+    });
+    
+    // Cerrar modal al hacer clic en la X
+    spanCerrar.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    // Cerrar modal al hacer clic fuera del contenido
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+    
+    // Navegación del carrusel
+    btnPrev.addEventListener('click', function() {
+        carouselInner.scrollBy({
+            left: -carouselInner.offsetWidth,
+            behavior: 'smooth'
+        });
+    });
+    
+    btnNext.addEventListener('click', function() {
+        carouselInner.scrollBy({
+            left: carouselInner.offsetWidth,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
