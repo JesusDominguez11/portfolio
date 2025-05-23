@@ -97,6 +97,40 @@ window.translations.en = en = {
 
         // Sección Proyectos
         'projects-title': 'Projects',
+
+        //current project 1
+    "current-project-title": "Tork - Auto Repair site",
+    "current-project-description": "Comprehensive management system for auto repair shops that allows customers to book appointments online and the business to manage complete customer and vehicle history. Includes visit tracking, common issues registry, inventory management and statistical reports generation.",
+    "features-title": "Key Features:",
+    "feature1": "Online appointment scheduling",
+    "feature2": "Complete customer and vehicle history",
+    "feature3": "Visit tracking and services performed",
+    "feature4": "Common issues registry by model/brand",
+    "feature5": "Spare parts inventory management",
+    "feature6": "Statistical reports generation",
+    "feature7": "Email/SMS notifications",
+    "progress-title": "Current Status:",
+    "progress-percent": "25% completed",
+    "progress-description": "Currently in active development phase. Completed modules: authentication, customer management and basic scheduling. In development: inventory system and reports module.",
+
+        // Flutter project
+    "flutter-project-title": "3DVerse Mobile App",
+    "flutter-project-description": "Mobile version of the 3DVerse platform, allowing users to explore and purchase 3D figures from their mobile devices. The app connects to the same existing API from the web project, offering a mobile-optimized experience with features like push notifications, biometric authentication and mobile payments. Currently in early development phase.",
+    "flutter-features-title": "Planned Features:",
+    "flutter-feature1": "Complete 3D product catalog",
+    "flutter-feature2": "Biometric authentication (Fingerprint/Face ID)",
+    "flutter-feature3": "Push notifications for offers and updates",
+    "flutter-feature4": "Rating and review system",
+    "flutter-feature5": "Integration with mobile payment methods",
+    "flutter-feature6": "Synchronization with web version",
+    "flutter-feature7": "Dark mode and display settings",
+    "flutter-progress-title": "Current Status:",
+    "flutter-progress-percent": "15% completed",
+    "flutter-progress-description": "Initial phase: Basic architecture setup and connection with existing API. Currently working on authentication screen and basic product catalog.",
+
+
+
+
         'project1-title': '3DVerse marketplace site',
         'project1-description': 'A marketplace website for the sale of 3D printed figures. The site has an authentication system with login and registration, a shopping cart system, and a dashboard to self-manage the website. It has a system of recommendations and related products based on the collaboration algorithm. Developed in <strong>Angular</strong>, an API in <strong>Node.js</strong> and <strong>PostgreSQL</strong>. Deployed at <strong>Render.com</strong>',
         'source-code': 'Source Code in GitHub',

@@ -200,64 +200,123 @@
 
             <button id="verProyectosCurso" class="btn-proyectos-curso">Ver proyectos en curso</button>
             
+
+
             <div class="proyecto en-curso" style="display: none;">
+    <div class="contenido-proyecto">
+        <div class="texto-proyecto">
+            <h4 class="titulo-proyecto" data-i18n="current-project-title">AutoWorks - Taller Mecánico</h3>
+            <p data-i18n="current-project-description" data-i18n-html>
+                Sistema integral de gestión para talleres mecánicos que permite a los clientes agendar citas en línea
+                y al negocio administrar el historial completo de clientes y vehículos. Incluye seguimiento de visitas,
+                registro de fallas comunes, gestión de inventario y generación de reportes estadísticos.
+            </p>
+            <div class="tecnologias">
+                <i class="fab fa-laravel" title="Laravel"></i>
+                <i class="fab fa-php" title="PHP"></i>
+                <i class="fas fa-database" title="MySQL"></i>
+                <i class="fab fa-js" title="JavaScript"></i>
+                <!-- <i class="fab fa-bootstrap" title="Bootstrap"></i> -->
+            </div>
 
-                <div class="contenido-proyecto">
-                    <div class="texto-proyecto">
-                        <h4 class="titulo-proyecto" data-i18n="project1-title">3DVerse marketplace site</h3>
-                            <p data-i18n="project1-description" data-i18n-html>
-                                A marketplace website for the sale of 3D printed figures. The site has an authentication
-                                system with login and registration, a shopping
-                                cart system, and a dashboard to self-manage the website. It has a system of
-                                recommendations and related products based on the collaboration
-                                algorithm. Developed in Angular, an API in Node.js and PostgreSQL. Deployed at
-                                Render.com
-                            </p>
-                            <div class="tecnologias">
-                                <i class="fab fa-angular" title="Angular"></i>
-                                <i class="fas fa-server" title="Node.js API"></i>
-                                <i class="fas fa-lock" title="JsonWebTokens"></i>
-                                <i class="fab fa-css3-alt" title="CSS3"></i>
-                                <i class="fas fa-database" title="PostgreSQL"></i>
-                                <i class="fas fa-cloud-upload-alt" title="Render.com"></i>
-                            </div>
+            <div class="caracteristicas-proyecto">
+                <h5 data-i18n="features-title">Características Principales:</h5>
+                <ul>
+                    <li data-i18n="feature1">Agendamiento de citas en línea</li>
+                    <li data-i18n="feature2">Historial completo de clientes y vehículos</li>
+                    <li data-i18n="feature3">Seguimiento de visitas y servicios realizados</li>
+                    <li data-i18n="feature4">Registro de fallas comunes por modelo/marca</li>
+                    <li data-i18n="feature5">Gestión de inventario de repuestos</li>
+                    <li data-i18n="feature6">Generación de reportes estadísticos</li>
+                    <li data-i18n="feature7">Notificaciones por email/SMS</li>
+                </ul>
+            </div>
 
-                            <div class="botones-codigo">
-                                <a href="https://github.com/JesusDominguez11/3DPrinting_Store" target="_blank"
-                                    class="boton-codigo">
-                                    <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
-                                </a>
-
-                                <a href="https://github.com/JesusDominguez11/3dverse-api" target="_blank"
-                                    class="boton-codigo">
-                                    <i class="fab fa-github"></i> <span data-i18n="api-source-code">API Source Code in GitHub</span>
-                                </a>
-                            </div>
-
-                            <!-- Botón "Visita el sitio web" (debajo de los botones de código) -->
-                            <div class="botones-visitar-contenedor">
-                                <a href="https://threedprinting-store.onrender.com" target="_blank"
-                                    class="boton-visitar">
-                                    <i class="fas fa-external-link-alt"></i> <span data-i18n="visit-website">Visit the website</span>
-                                </a>
-                            </div>
-                    </div>
-
-                    <!-- <div class="carousel">
-                        <button class="carousel-prev">&#10094;</button>
-                        <div class="carousel-inner">
-                            <img src="./src/img/proyects/p3/p3_123.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_234.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_345.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_456.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_567.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_678.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                            <img src="./src/img/proyects/p3/p3_789.png" data-i18n-alt="project1-screenshot" alt="Captura de la aplicación">
-                        </div>
-                        <button class="carousel-next">&#10095;</button>
-                    </div> -->
+            <div class="progreso-proyecto">
+                <h5 data-i18n="progress-title">Estado Actual:</h5>
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 25%;" data-i18n="progress-percent">65% completado</div>
                 </div>
+                <p data-i18n="progress-description">
+                    Actualmente en fase de desarrollo activo. Módulos completados: autenticación, 
+                    gestión de clientes y agendamiento básico. En desarrollo: sistema de inventario
+                    y módulo de reportes.
+                </p>
+            </div>
+        </div>
 
+        <!-- <div class="carousel">
+            <button class="carousel-prev">&#10094;</button>
+            <div class="carousel-inner">
+                <img src="./src/img/proyects/current/aw-dashboard.png" data-i18n-alt="current-project-screenshot" alt="Captura del dashboard">
+                <img src="./src/img/proyects/current/aw-appointments.png" data-i18n-alt="current-project-screenshot" alt="Captura del módulo de citas">
+                <img src="./src/img/proyects/current/aw-customers.png" data-i18n-alt="current-project-screenshot" alt="Captura del módulo de clientes">
+                <img src="./src/img/proyects/current/aw-vehicles.png" data-i18n-alt="current-project-screenshot" alt="Captura del módulo de vehículos">
+            </div>
+            <button class="carousel-next">&#10095;</button>
+        </div> -->
+    </div>
+            </div>
+
+            <div class="proyecto en-curso" style="display: none;">
+    <div class="contenido-proyecto">
+        <div class="texto-proyecto">
+            <h4 class="titulo-proyecto" data-i18n="flutter-project-title">3DVerse Mobile App</h3>
+            <p data-i18n="flutter-project-description" data-i18n-html>
+                Versión móvil de la plataforma 3DVerse, permitiendo a los usuarios explorar y comprar figuras 3D desde 
+                sus dispositivos móviles. La aplicación se conecta a la misma API existente del proyecto web, 
+                ofreciendo una experiencia optimizada para móviles con funcionalidades como notificaciones push, 
+                autenticación biométrica y pagos móviles. Actualmente en fase inicial de desarrollo.
+            </p>
+            <div class="tecnologias">
+                <i class="fab fa-flutter" title="Flutter"></i>
+                <i class="fab fa-android" title="Android"></i>
+                <i class="fab fa-apple" title="iOS"></i>
+                <i class="fas fa-server" title="Node.js API"></i>
+                <i class="fas fa-database" title="PostgreSQL"></i>
+            </div>
+
+            <div class="caracteristicas-proyecto">
+                <h5 data-i18n="flutter-features-title">Características Planeadas:</h5>
+                <ul>
+                    <li data-i18n="flutter-feature1">Catálogo completo de productos 3D</li>
+                    <li data-i18n="flutter-feature2">Autenticación biométrica (Huella/Face ID)</li>
+                    <li data-i18n="flutter-feature3">Notificaciones push para ofertas y actualizaciones</li>
+                    <li data-i18n="flutter-feature4">Sistema de valoraciones y reseñas</li>
+                    <li data-i18n="flutter-feature5">Integración con métodos de pago móviles</li>
+                    <li data-i18n="flutter-feature6">Sincronización con la versión web</li>
+                    <li data-i18n="flutter-feature7">Modo oscuro y ajustes de visualización</li>
+                </ul>
+            </div>
+
+            <div class="progreso-proyecto">
+                <h5 data-i18n="flutter-progress-title">Estado Actual:</h5>
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 15%;" data-i18n="flutter-progress-percent">15% completado</div>
+                </div>
+                <p data-i18n="flutter-progress-description">
+                    Fase inicial: Configuración de la arquitectura básica y conexión con la API existente.
+                    Actualmente trabajando en la pantalla de autenticación y el catálogo básico de productos.
+                </p>
+            </div>
+
+            <div class="botones-codigo">
+                <a href="https://github.com/JesusDominguez11/3dverse-mobile" target="_blank" class="boton-codigo">
+                    <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="carousel">
+            <button class="carousel-prev">&#10094;</button>
+            <div class="carousel-inner">
+                <img src="./src/img/proyects/flutter/3dv-mobile-wireframe.png" data-i18n-alt="flutter-project-screenshot" alt="Wireframe de la aplicación">
+                <img src="./src/img/proyects/flutter/3dv-mobile-auth.png" data-i18n-alt="flutter-project-screenshot" alt="Prototipo de autenticación">
+                <img src="./src/img/proyects/flutter/3dv-mobile-catalog.png" data-i18n-alt="flutter-project-screenshot" alt="Diseño del catálogo">
+            </div>
+            <button class="carousel-next">&#10095;</button>
+        </div> -->
+    </div>
             </div>
 
 

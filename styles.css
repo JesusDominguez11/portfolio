@@ -1206,23 +1206,77 @@ section.hidden {
 /* ESTILOS DE LA MODAL */
 /* Estilos para el header de proyectos */
 .proyecto.en-curso {
-    background-color: #060f1b;
-    text-align: center;
-    padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(100, 255, 218, 0.3);
-    max-width: 400px;
-    width: 100%;
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(100, 255, 218, 0.5);
+    background: rgba(6, 15, 27, 0.8);
+    position: relative;
+    overflow: hidden;
 }
 
-.proyecto.en-curso:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 16px 24px rgba(100, 255, 218, 0.3);
+.proyecto.en-curso::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #64ffda, #3a7bd5);
+    animation: progressLine 3s infinite;
 }
 
-.proyecto.en-curso:hover .tarjeta-experiencia:not(:hover) {
-    opacity: 0.5;
+@keyframes progressLine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.caracteristicas-proyecto ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.caracteristicas-proyecto li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.caracteristicas-proyecto li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+
+.progreso-proyecto {
+    margin-top: 20px;
+}
+
+.barra-progreso {
+    height: 8px;
+    background: rgba(100, 255, 218, 0.2);
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.barra-progreso .progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #64ffda, #3a7bd5);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Añade esto a tu CSS para el icono de Flutter */
+.fa-flutter:before {
+    content: "Fl";
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.9em;
+    letter-spacing: -1px;
 }
 
 .proyectos-header {
@@ -1322,6 +1376,7 @@ section.hidden {
     min-width: 100%;
     box-sizing: border-box;
     padding: 15px;
+    height: fit-content;
 }
 
 .modal-carousel-prev, .modal-carousel-next {
