@@ -97,6 +97,7 @@ window.translations.en = en = {
 
         // Sección Proyectos
         'projects-title': 'Projects',
+        'inDev-projects-btn': 'View projects in Development',
 
         //current project 1
     "current-project-title": "Tork - Auto Repair site",
@@ -128,6 +129,21 @@ window.translations.en = en = {
     "flutter-progress-percent": "15% completed",
     "flutter-progress-description": "Initial phase: Basic architecture setup and connection with existing API. Currently working on authentication screen and basic product catalog.",
 
+        // Vue project
+    "vue-project-title": "Velora - Cars Catalog",
+    "vue-project-description": "Informational platform about iconic cars in history, showing technical details, history and curiosities of each model. Developed as a pure frontend project with Vue 3 and TypeScript, implementing development best practices and reusable components. Deployed on Vercel for frontend work demonstration.",
+    "vue-features-title": "Technical Features:",
+    "vue-feature1": "Modular architecture with Vue 3",
+    "vue-feature2": "Strong typing with TypeScript",
+    "vue-feature3": "Responsive design with modern CSS",
+    "vue-feature4": "Smooth animations and transitions",
+    "vue-feature5": "Reusable components",
+    "vue-feature6": "Integration with public car API",
+    "vue-feature7": "Automatic deployment with Vercel",
+    "vue-progress-title": "Current Status:",
+    "vue-progress-percent": "15% completed",
+    "vue-progress-description": "Initial project setup completed. Currently developing base component structure and vehicle listing page. Next steps: implement filtering system and detailed view for each car.",
+    "preview-deploy": "Preview Deployment",
 
 
 

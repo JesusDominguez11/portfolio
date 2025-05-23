@@ -198,14 +198,16 @@
         <div class="contenido">
             <h2 data-i18n="projects-title">Projects</h2>
 
-            <button id="verProyectosCurso" class="btn-proyectos-curso">Ver proyectos en curso</button>
+            <button id="verProyectosCurso" class="btn-proyectos-curso">
+                <span data-i18n="inDev-projects-btn">Ver proyectos en desarrollo</span>
+            </button>
             
 
 
             <div class="proyecto en-curso" style="display: none;">
     <div class="contenido-proyecto">
         <div class="texto-proyecto">
-            <h4 class="titulo-proyecto" data-i18n="current-project-title">AutoWorks - Taller Mecánico</h3>
+            <h4 class="titulo-proyecto" data-i18n="current-project-title">Tork - Taller Mecánico</h3>
             <p data-i18n="current-project-description" data-i18n-html>
                 Sistema integral de gestión para talleres mecánicos que permite a los clientes agendar citas en línea
                 y al negocio administrar el historial completo de clientes y vehículos. Incluye seguimiento de visitas,
@@ -242,6 +244,15 @@
                     gestión de clientes y agendamiento básico. En desarrollo: sistema de inventario
                     y módulo de reportes.
                 </p>
+            </div>
+
+                        <div class="botones-codigo">
+                <a href="https://github.com/JesusDominguez11/neon_garage" target="_blank" class="boton-codigo">
+                    <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
+                </a>
+                <a href="https://neongarage-production.up.railway.app" target="_blank" class="boton-codigo">
+                    <i class="fas fa-external-link-alt"></i> <span data-i18n="preview-deploy">Preview Deployment</span>
+                </a>
             </div>
         </div>
 
@@ -301,8 +312,11 @@
             </div>
 
             <div class="botones-codigo">
-                <a href="https://github.com/JesusDominguez11/3dverse-mobile" target="_blank" class="boton-codigo">
+                <a href="https://github.com/JesusDominguez11/3dverse_mobile" target="_blank" class="boton-codigo">
                     <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
+                </a>
+                <a href="https://appetize.io/app/b_jemkdjlzxlux5v2odapcivwbba" target="_blank" class="boton-codigo">
+                    <i class="fas fa-external-link-alt"></i> <span data-i18n="preview-deploy">Preview Deployment</span>
                 </a>
             </div>
         </div>
@@ -319,6 +333,70 @@
     </div>
             </div>
 
+            <div class="proyecto en-curso" style="display: none;">
+    <div class="contenido-proyecto">
+        <div class="texto-proyecto">
+            <h4 class="titulo-proyecto" data-i18n="vue-project-title">Velora - Catálogo de Autos</h3>
+            <p data-i18n="vue-project-description" data-i18n-html>
+                Plataforma informativa sobre autos icónicos de la historia, mostrando detalles técnicos,
+                historia y curiosidades de cada modelo. Desarrollado como un proyecto frontend puro con
+                Vue 3 y TypeScript, implementando buenas prácticas de desarrollo y componentes reutilizables.
+                Desplegado en Vercel para demostración del trabajo frontend.
+            </p>
+            <div class="tecnologias">
+                <i class="fab fa-vuejs" title="Vue.js"></i>
+                <i class="fas fa-code" title="TypeScript"></i>
+                <i class="fab fa-css3-alt" title="CSS3"></i>
+                <i class="fab fa-js" title="JavaScript"></i>
+                <i class="fas fa-cloud-upload-alt" title="Vercel"></i>
+            </div>
+
+            <div class="caracteristicas-proyecto">
+                <h5 data-i18n="vue-features-title">Características Técnicas:</h5>
+                <ul>
+                    <li data-i18n="vue-feature1">Arquitectura modular con Vue 3</li>
+                    <li data-i18n="vue-feature2">Tipado fuerte con TypeScript</li>
+                    <li data-i18n="vue-feature3">Diseño responsive con CSS moderno</li>
+                    <li data-i18n="vue-feature4">Animaciones y transiciones fluidas</li>
+                    <li data-i18n="vue-feature5">Componentes reutilizables</li>
+                    <li data-i18n="vue-feature6">Integración con API pública de autos</li>
+                    <li data-i18n="vue-feature7">Despliegue automático con Vercel</li>
+                </ul>
+            </div>
+
+            <div class="progreso-proyecto">
+                <h5 data-i18n="vue-progress-title">Estado Actual:</h5>
+                <div class="barra-progreso">
+                    <div class="progreso" style="width: 15%;" data-i18n="vue-progress-percent">15% completado</div>
+                </div>
+                <p data-i18n="vue-progress-description">
+                    Configuración inicial del proyecto completada. Actualmente desarrollando la estructura base
+                    de componentes y la página de listado de vehículos. Próximos pasos: implementar el sistema
+                    de filtrado y la vista detallada de cada auto.
+                </p>
+            </div>
+
+            <div class="botones-codigo">
+                <a href="https://github.com/JesusDominguez11/velora" target="_blank" class="boton-codigo">
+                    <i class="fab fa-github"></i> <span data-i18n="source-code">Source Code in GitHub</span>
+                </a>
+                <a href="https://velora-eta.vercel.app" target="_blank" class="boton-codigo">
+                    <i class="fas fa-external-link-alt"></i> <span data-i18n="preview-deploy">Preview Deployment</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- <div class="carousel">
+            <button class="carousel-prev">&#10094;</button>
+            <div class="carousel-inner">
+                <img src="./src/img/proyects/vue/iconic-autos-wireframe.png" data-i18n-alt="vue-project-screenshot" alt="Wireframe del proyecto">
+                <img src="./src/img/proyects/vue/iconic-autos-structure.png" data-i18n-alt="vue-project-screenshot" alt="Estructura del proyecto">
+                <img src="./src/img/proyects/vue/iconic-autos-listing.png" data-i18n-alt="vue-project-screenshot" alt="Prototipo de listado">
+            </div>
+            <button class="carousel-next">&#10095;</button>
+        </div> -->
+    </div>
+</div>
 
 
 

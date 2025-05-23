@@ -1319,6 +1319,7 @@ section.hidden {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     opacity: 0; 
+    overflow-y: auto;
 }
 
 .modal.fade-in {
@@ -1404,7 +1405,12 @@ section.hidden {
 @media (max-width: 768px) {
     .modal-contenido {
         /* width: 95%; */
-        margin: 10% auto;
+        width: 90%;
+        margin: 20px auto;
+        /* max-height: 90vh; */
+    }
+    .modal-carousel-inner .proyecto {
+        padding: 10px;
     }
     
     .modal-carousel-prev {
