@@ -1201,6 +1201,237 @@ section.hidden {
         height: auto;
     }
 }
+
+
+/* ESTILOS DE LA MODAL */
+.proyecto.en-curso {
+    border: 1px solid rgba(100, 255, 218, 0.5);
+    background: rgba(6, 15, 27, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.proyecto.en-curso::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #64ffda, #3a7bd5);
+    animation: progressLine 3s infinite;
+}
+
+@keyframes progressLine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.caracteristicas-proyecto ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.caracteristicas-proyecto li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.caracteristicas-proyecto li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+}
+
+.progreso-proyecto {
+    margin-top: 20px;
+}
+
+.barra-progreso {
+    height: 8px;
+    background: rgba(100, 255, 218, 0.2);
+    border-radius: 4px;
+    margin: 10px 0;
+    overflow: hidden;
+}
+
+.barra-progreso .progreso {
+    height: 100%;
+    background: linear-gradient(90deg, #64ffda, #3a7bd5);
+    border-radius: 4px;
+    transition: width 1s ease;
+}
+
+/* Añade esto a tu CSS para el icono de Flutter */
+.fa-flutter:before {
+    content: "Fl";
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 0.9em;
+    letter-spacing: -1px;
+}
+
+.proyectos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+/* Reemplaza el estilo actual .btn-proyectos-curso con este: */
+.btn-proyectos-curso {
+    display: inline-flex; 
+    align-items: center;
+    gap: 5px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    border-radius: 20px;
+    color: #64ffda;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--desktop-subtext);
+    transition: background-color 0.6s ease, color 0.6s ease;
+    animation: aparecer 2.5s ease-in-out;
+}
+
+.btn-proyectos-curso:hover {
+    background-color: #64ffda;
+    color: #0a192f;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0; 
+    overflow-y: auto;
+}
+
+.modal.fade-in {
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+.modal.fade-out {
+    animation: fadeOut 0.3s ease-in-out forwards;
+}
+
+.modal-contenido {
+    background-color: #1d4753;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 900px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.modal.show .modal-contenido {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.cerrar-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estilos para el carrusel dentro del modal */
+.modal-carousel {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.modal-carousel-inner {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.modal-carousel-inner .proyecto {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    height: fit-content;
+}
+
+.modal-carousel-prev, .modal-carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    font-size: 18px;
+}
+
+.modal-carousel-prev {
+    left: -40px;
+}
+
+.modal-carousel-next {
+    right: -40px;
+}
+
+@media (max-width: 768px) {
+    .modal-contenido {
+        /* width: 95%; */
+        width: 90%;
+        margin: 20px auto;
+        /* max-height: 90vh; */
+    }
+    .modal-carousel-inner .proyecto {
+        padding: 10px;
+    }
+    
+    .modal-carousel-prev {
+        left: 5px;
+    }
+    
+    .modal-carousel-next {
+        right: 5px;
+    }
+}
+
+/* Animaciones para el modal */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 

@@ -94,6 +94,55 @@ window.translations.es = es = {
 
         // Sección Proyectos
         'projects-title': 'Proyectos',
+        'inDev-projects-btn': 'Ver proyectos en desarrollo',
+
+        // Proyecto actual
+    "current-project-title": "Tork - Taller Mecánico",
+    "current-project-description": "Sistema integral de gestión para talleres mecánicos que permite a los clientes agendar citas en línea y al negocio administrar el historial completo de clientes y vehículos. Incluye seguimiento de visitas, registro de fallas comunes, gestión de inventario y generación de reportes estadísticos.",
+    "features-title": "Características Principales:",
+    "feature1": "Agendamiento de citas en línea",
+    "feature2": "Historial completo de clientes y vehículos",
+    "feature3": "Seguimiento de visitas y servicios realizados",
+    "feature4": "Registro de fallas comunes por modelo/marca",
+    "feature5": "Gestión de inventario de repuestos",
+    "feature6": "Generación de reportes estadísticos",
+    "feature7": "Notificaciones por email/SMS",
+    "progress-title": "Estado Actual:",
+    "progress-percent": "25% completado",
+    "progress-description": "Actualmente en fase de desarrollo activo. Módulos completados: autenticación, gestión de clientes y agendamiento básico. En desarrollo: sistema de inventario y módulo de reportes.",
+
+
+        // Proyecto Flutter
+    "flutter-project-title": "Aplicación Móvil 3DVerse",
+    "flutter-project-description": "Versión móvil de la plataforma 3DVerse, permitiendo a los usuarios explorar y comprar figuras 3D desde sus dispositivos móviles. La aplicación se conecta a la misma API existente del proyecto web, ofreciendo una experiencia optimizada para móviles con funcionalidades como notificaciones push, autenticación biométrica y pagos móviles. Actualmente en fase inicial de desarrollo.",
+    "flutter-features-title": "Características Planeadas:",
+    "flutter-feature1": "Catálogo completo de productos 3D",
+    "flutter-feature2": "Autenticación biométrica (Huella/Face ID)",
+    "flutter-feature3": "Notificaciones push para ofertas y actualizaciones",
+    "flutter-feature4": "Sistema de valoraciones y reseñas",
+    "flutter-feature5": "Integración con métodos de pago móviles",
+    "flutter-feature6": "Sincronización con la versión web",
+    "flutter-feature7": "Modo oscuro y ajustes de visualización",
+    "flutter-progress-title": "Estado Actual:",
+    "flutter-progress-percent": "15% completado",
+    "flutter-progress-description": "Fase inicial: Configuración de la arquitectura básica y conexión con la API existente. Actualmente trabajando en la pantalla de autenticación y el catálogo básico de productos.",
+
+        // Proyecto Vue
+    "vue-project-title": "Velora - Catálogo de Autos",
+    "vue-project-description": "Plataforma informativa sobre autos icónicos de la historia, mostrando detalles técnicos, historia y curiosidades de cada modelo. Desarrollado como proyecto frontend puro con Vue 3 y TypeScript, implementando buenas prácticas de desarrollo y componentes reutilizables. Desplegado en Vercel para demostración del trabajo frontend.",
+    "vue-features-title": "Características Técnicas:",
+    "vue-feature1": "Arquitectura modular con Vue 3",
+    "vue-feature2": "Tipado fuerte con TypeScript",
+    "vue-feature3": "Diseño responsive con CSS moderno",
+    "vue-feature4": "Animaciones y transiciones fluidas",
+    "vue-feature5": "Componentes reutilizables",
+    "vue-feature6": "Integración con API pública de autos",
+    "vue-feature7": "Despliegue automático con Vercel",
+    "vue-progress-title": "Estado Actual:",
+    "vue-progress-percent": "15% completado",
+    "vue-progress-description": "Configuración inicial del proyecto completada. Actualmente desarrollando la estructura base de componentes y la página de listado de vehículos. Próximos pasos: implementar el sistema de filtrado y la vista detallada de cada auto.",
+    "preview-deploy": "Vista Previa del Despliegue",
+
         'project1-title': 'Sitio web de 3DVerse',
         'project1-description': 'Un sitio web para la venta de figuras impresas en 3D. El sitio cuenta con un sistema de autenticación con login y registro, sistema de carrito de compras y un panel para auto-administrar el sitio web. Tiene un sistema de recomendaciones y productos relacionados basado en el algoritmo de colaboración. Desarrollado en <strong>Angular</strong>, una API en <strong>Node.js</strong> y <strong>PostgreSQL</strong>. Desplegado en <strong>Render.com</strong>',
         'source-code': 'Código Fuente en GitHub',
