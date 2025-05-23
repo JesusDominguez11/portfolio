@@ -344,115 +344,99 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnVerProyectos = document.getElementById('verProyectosCurso');
     const spanCerrar = document.querySelector('.cerrar-modal');
     const carouselInner = document.querySelector('.modal-carousel-inner');
-    
-    // Variables de estado
+    const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
+   
+
+    // Variable para guardar el índice actual
     let currentSlide = 0;
-    let itemWidth = 0;
-    let isAnimating = false;
 
-    // Función para inicializar el carrusel
-    function initCarousel() {
-        carouselInner.innerHTML = '';
-        const proyectos = document.querySelectorAll('.proyecto.en-curso');
-        
-        proyectos.forEach(proyecto => {
-            const clone = proyecto.cloneNode(true);
-            clone.style.display = 'block';
-            carouselInner.appendChild(clone);
-        });
-        
-        // Calcular el ancho del item después de que se hayan cargado
-        setTimeout(() => {
-            itemWidth = carouselInner.querySelector('.proyecto').offsetWidth + 20;
-            carouselInner.scrollLeft = 0;
-            currentSlide = 0;
-        }, 50);
-    }
-
-    // Función para navegar
-    function goToSlide(index) {
-        if (isAnimating) return;
-        
-        isAnimating = true;
-        currentSlide = Math.max(0, Math.min(index, carouselInner.children.length - 1));
-        
-        carouselInner.scrollTo({
-            left: currentSlide * itemWidth,
-            behavior: 'smooth'
-        });
-        
-        // Resetear flag después de la animación
-        setTimeout(() => {
-            isAnimating = false;
-        }, 500);
-    }
-
-    // Evento para abrir modal
+    // Mostrar modal con animación
     btnVerProyectos.addEventListener('click', function() {
-        initCarousel();
+        // Resetear posición al abrir
+        carouselInner.scrollLeft = 0;
+        currentSlide = 0;
+        
+        // Limpiar y clonar proyectos
+        carouselInner.innerHTML = '';
+        const proyectosEnCurso = document.querySelectorAll('.proyecto.en-curso');
+        
+        proyectosEnCurso.forEach(proyecto => {
+            const proyectoClone = proyecto.cloneNode(true);
+            proyectoClone.style.display = 'block';
+            carouselInner.appendChild(proyectoClone);
+        });
+        
+        // Mostrar modal
         modal.style.display = 'block';
         modal.classList.add('fade-in');
-        setTimeout(() => modal.classList.add('show'), 10);
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
+        
+        // Forzar redibujado del carrusel
+        setTimeout(() => {
+            carouselInner.scrollLeft = 0;
+        }, 50);
     });
-
-    // Eventos para botones de navegación
-    document.querySelector('.modal-carousel-prev').addEventListener('click', function(e) {
-        e.stopPropagation();
-        goToSlide(currentSlide - 1);
-    });
-
-    document.querySelector('.modal-carousel-next').addEventListener('click', function(e) {
-        e.stopPropagation();
-        goToSlide(currentSlide + 1);
-    });
-
-    // Touch events para móviles
-    let startX, scrollLeft, isDown = false;
-
-    carouselInner.addEventListener('touchstart', function(e) {
-        isDown = true;
-        startX = e.touches[0].pageX - carouselInner.offsetLeft;
-        scrollLeft = carouselInner.scrollLeft;
-    }, {passive: true});
-
-    carouselInner.addEventListener('touchmove', function(e) {
-        if (!isDown) return;
-        e.preventDefault();
-        const x = e.touches[0].pageX - carouselInner.offsetLeft;
-        const walk = (x - startX) * 1.5; // Sensibilidad
-        carouselInner.scrollLeft = scrollLeft - walk;
-    }, {passive: false});
-
-    carouselInner.addEventListener('touchend', function() {
-        isDown = false;
-        // Snap to nearest slide
-        const slideIndex = Math.round(carouselInner.scrollLeft / itemWidth);
-        goToSlide(slideIndex);
-    });
-
-    // Cerrar modal
+    
+    // Cerrar modal con animación
     function cerrarModal() {
         modal.classList.remove('show');
         modal.classList.add('fade-out');
+        
+        setTimeout(() => {
+            modal.style.display = 'none';
+            modal.classList.remove('fade-in', 'fade-out');
+        }, 300); // Coincide con la duración de la animación
+    }
+    
+    spanCerrar.addEventListener('click', cerrarModal);
+    
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            cerrarModal();
+        }
+    });
+    
+// Navegación del carrusel mejorada
+    const btnPrev = document.querySelector('.modal-carousel-prev');
+    const btnNext = document.querySelector('.modal-carousel-next');
+    
+    btnPrev.addEventListener('click', function() {
+        const itemWidth = carouselInner.querySelector('.proyecto').offsetWidth + 20; // + gap
+        carouselInner.scrollBy({
+            left: -itemWidth,
+            behavior: 'smooth'
+        });
+        currentSlide = Math.max(0, currentSlide - 1);
+    });
+    
+    btnNext.addEventListener('click', function() {
+        const itemWidth = carouselInner.querySelector('.proyecto').offsetWidth + 20; // + gap
+        carouselInner.scrollBy({
+            left: itemWidth,
+            behavior: 'smooth'
+        });
+        currentSlide = Math.min(carouselInner.children.length - 1, currentSlide + 1);
+    });
+
+        // Asegurar centrado después de scroll
+    carouselInner.addEventListener('scroll', function() {
+        const itemWidth = this.querySelector('.proyecto').offsetWidth + 20;
+        currentSlide = Math.round(this.scrollLeft / itemWidth);
+    });
+    
+    // Cerrar modal (mantén tu función existente)
+    function cerrarModal() {
+        modal.classList.remove('show');
+        modal.classList.add('fade-out');
+        
         setTimeout(() => {
             modal.style.display = 'none';
             modal.classList.remove('fade-in', 'fade-out');
         }, 300);
     }
-
-    spanCerrar.addEventListener('click', cerrarModal);
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) cerrarModal();
-    });
-
-    // Actualizar currentSlide durante scroll
-    carouselInner.addEventListener('scroll', function() {
-        if (!isDown && !isAnimating) {
-            currentSlide = Math.round(this.scrollLeft / itemWidth);
-        }
-    });
 });
-
 
 
 
