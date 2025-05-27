@@ -94,7 +94,7 @@ window.translations.es = es = {
 
         // Sección Proyectos
         'projects-title': 'Proyectos',
-        'inDev-projects-btn': 'Ver proyectos en desarrollo',
+        'inDev-projects-btn': 'Proyectos en desarrollo',
 
         // Proyecto actual
     "current-project-title": "Tork - Taller Mecánico",

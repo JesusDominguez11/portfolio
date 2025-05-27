@@ -97,7 +97,7 @@ window.translations.en = en = {
 
         // Sección Proyectos
         'projects-title': 'Projects',
-        'inDev-projects-btn': 'View projects in Development',
+        'inDev-projects-btn': 'Projects in development',
 
         //current project 1
     "current-project-title": "Tork - Auto Repair site",
